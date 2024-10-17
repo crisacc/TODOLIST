@@ -3,4 +3,8 @@ project(TODOLIST)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(TODOLIST main.cpp)
+add_executable(TODOLIST main.cpp
+        Activity.cpp
+        Activity.h
+        TodoList.cpp
+        TodoList.h)

@@ -88,7 +88,7 @@ void Activity::stampActivity()const{
     std::cout << "Activity: " << description;
     std::cout << " - Done: " << (done ? "Yes" : "No");
     std::cout << " - Priority: " << priorityToString();
-    std::cout << " - Expiration Date" << expirationDateToString()
+    std::cout << " - Expiration Date: " << expirationDateToString()
               << std::endl;
 }
 

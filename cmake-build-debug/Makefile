@@ -128,6 +128,54 @@ TODOLIST/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/build
 .PHONY : TODOLIST/fast
 
+Activity.obj: Activity.cpp.obj
+.PHONY : Activity.obj
+
+# target to build an object file
+Activity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/Activity.cpp.obj
+.PHONY : Activity.cpp.obj
+
+Activity.i: Activity.cpp.i
+.PHONY : Activity.i
+
+# target to preprocess a source file
+Activity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/Activity.cpp.i
+.PHONY : Activity.cpp.i
+
+Activity.s: Activity.cpp.s
+.PHONY : Activity.s
+
+# target to generate assembly for a file
+Activity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/Activity.cpp.s
+.PHONY : Activity.cpp.s
+
+TodoList.obj: TodoList.cpp.obj
+.PHONY : TodoList.obj
+
+# target to build an object file
+TodoList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/TodoList.cpp.obj
+.PHONY : TodoList.cpp.obj
+
+TodoList.i: TodoList.cpp.i
+.PHONY : TodoList.i
+
+# target to preprocess a source file
+TodoList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/TodoList.cpp.i
+.PHONY : TodoList.cpp.i
+
+TodoList.s: TodoList.cpp.s
+.PHONY : TodoList.s
+
+# target to generate assembly for a file
+TodoList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/TodoList.cpp.s
+.PHONY : TodoList.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TODOLIST
+	@echo ... Activity.obj
+	@echo ... Activity.i
+	@echo ... Activity.s
+	@echo ... TodoList.obj
+	@echo ... TodoList.i
+	@echo ... TodoList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
