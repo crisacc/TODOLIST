@@ -29,8 +29,18 @@ private:
 
 public:
 
-    explicit Activity(const string &desc= "", bool status= false, Priority prior = Priority::Unknown) :
-                description(desc), done(status), priority(prior), gotExpirationDate(false){}
+    explicit Activity(const string &desc= "", Priority prior = Priority::Unknown) :
+                description(desc), priority(prior), gotExpirationDate(false), done(false){}
+
+    explicit Activity(const std::string& desc = "", Priority prior = Priority::Unknown, const std::string& date = "")
+            : description(desc), priority(prior), done(false) {
+        if (!date.empty()) {
+            setExpirationDate(date);
+            gotExpirationDate = true;
+        } else {
+            gotExpirationDate = false;
+        }
+    };
 
     const string &getDescription() const;
 
