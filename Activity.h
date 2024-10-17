@@ -32,7 +32,7 @@ public:
     explicit Activity(const string &desc= "", Priority prior = Priority::Unknown) :
                 description(desc), priority(prior), gotExpirationDate(false), done(false){}
 
-    explicit Activity(const std::string& desc = "", Priority prior = Priority::Unknown, const std::string& date = "")
+    explicit Activity(const std::string& desc , Priority prior , const std::string& date)
             : description(desc), priority(prior), done(false) {
         if (!date.empty()) {
             setExpirationDate(date);
