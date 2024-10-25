@@ -5,6 +5,7 @@
 #include "TodoList.h"
 #include <iostream>
 #include <algorithm>
+#include <fstream>
 using namespace std;
 
 void TodoList::addActivity(const Activity &activity) {
@@ -97,4 +98,62 @@ void TodoList::stampAll() {
         activityList[i].stampActivity();
     }
 
+}
+
+bool TodoList::readFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Impossibile aprire il file per la lettura." << std::endl;
+        return false;
+    }
+
+    json j;
+    file >> j;
+    file.close();
+
+    try {
+        activityList.clear();  // Pulisce la lista esistente prima di caricare nuove attività
+        for (const auto& item : j) {
+            Activity activity;
+            if (activity.fromJson(item)) {
+                activityList.push_back(activity);
+            } else {
+                std::cerr << "Errore nel parsing di un'attività dal file." << std::endl;
+            }
+        }
+    } catch (const json::exception& e) {
+        std::cerr << "Errore durante il parsing del file JSON: " << e.what() << std::endl;
+        return false;
+    }
+    return true;
+}
+
+bool TodoList::writeToFile(const std::string& filename) const {
+    // Nome del file temporaneo
+    std::string tempFilename = filename + ".tmp";
+
+    // Scrivi nel file temporaneo
+    std::ofstream file(tempFilename);
+    if (!file.is_open()) {
+        std::cerr << "Impossibile aprire il file temporaneo per la scrittura." << std::endl;
+        return false;
+    }
+
+    // Converte la lista di attività in un array JSON
+    json j = json::array();
+    for (const auto& activity : activityList) {
+        j.push_back(activity.toJson());
+    }
+
+    // Scrivi l'oggetto JSON nel file temporaneo
+    file << j.dump(4);  // Indentazione di 4 spazi per rendere il JSON leggibile
+    file.close();
+
+    // Se la scrittura è andata a buon fine, sostituisci il file originale
+    if (std::rename(tempFilename.c_str(), filename.c_str()) != 0) {
+        std::cerr << "Errore durante la sostituzione del file originale." << std::endl;
+        return false;
+    }
+
+    return true;
 }

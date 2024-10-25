@@ -9,6 +9,8 @@
 #include <chrono>
 #include <iomanip>
 #include <sstream>
+#include "json.hpp"
+using json = nlohmann::json;
 using namespace std;
 
 enum class Priority {
@@ -35,8 +37,10 @@ public:
     explicit Activity(const std::string& desc , Priority prior , const std::string& date)
             : description(desc), priority(prior), done(false) {
         if (!date.empty()) {
-            setExpirationDate(date);
-            gotExpirationDate = true;
+            if (setExpirationDate(date))
+                gotExpirationDate = true;
+            else
+                gotExpirationDate = false;
         } else {
             gotExpirationDate = false;
         }
@@ -67,6 +71,16 @@ public:
     string priorityToString() const;
 
     void stampActivity()const;
+
+    json toJson() const;
+
+    bool fromJson(const json &j);
 };
+
+
+void saveActivityToFile(const Activity& activity, const std::string& filename);
+
+Activity loadActivityFromFile(const std::string& filename);
+
 
 #endif //TODOLIST_ACTIVITY_H

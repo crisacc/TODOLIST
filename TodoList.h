@@ -34,6 +34,10 @@ public:
     void sortByStateAndExpirationDate();
 
     void stampAll();
+
+    bool readFromFile(const std::string& filename);
+
+    bool writeToFile(const std::string& filename) const;
 };
 
 #endif //TODOLIST_TODOLIST_H
