@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <sstream>
 #include "json.hpp"
+#include "Date.h"
 using json = nlohmann::json;
 using namespace std;
 
@@ -26,7 +27,7 @@ private:
     string description;
     bool done;
     Priority priority;
-    std::chrono::system_clock::time_point expirationDate;
+    Date expirationDate;
     bool gotExpirationDate;
 
 public:
@@ -34,17 +35,8 @@ public:
     explicit Activity(const string &desc= "", Priority prior = Priority::Unknown) :
                 description(desc), priority(prior), gotExpirationDate(false), done(false){}
 
-    explicit Activity(const std::string& desc , Priority prior , const std::string& date)
-            : description(desc), priority(prior), done(false) {
-        if (!date.empty()) {
-            if (setExpirationDate(date))
-                gotExpirationDate = true;
-            else
-                gotExpirationDate = false;
-        } else {
-            gotExpirationDate = false;
-        }
-    };
+    explicit Activity(const std::string& desc , Priority prior , Date date)
+            : description(desc), priority(prior), done(false) , expirationDate(date) , gotExpirationDate(true){};
 
     const string &getDescription() const;
 
@@ -58,15 +50,13 @@ public:
 
     void setPriority(Priority priority);
 
-    bool setExpirationDate(const std::string& stringDate, const std::string& format = "%d/%m/%Y");
+    void setExpirationDate(Date date);
 
-    std::chrono::system_clock::time_point getExpirationDate() const;
+    Date getExpirationDate() const;
 
     bool hasExpirationDate() const;
 
     void deleteExpirationDate();
-
-    std::string expirationDateToString() const;
 
     string priorityToString() const;
 
@@ -76,11 +66,6 @@ public:
 
     bool fromJson(const json &j);
 };
-
-
-void saveActivityToFile(const Activity& activity, const std::string& filename);
-
-Activity loadActivityFromFile(const std::string& filename);
 
 
 #endif //TODOLIST_ACTIVITY_H

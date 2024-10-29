@@ -42,12 +42,17 @@ void TodoList::changeActivityDescription(int index, const string &newDescription
 void TodoList::sortByExpirationDate() {
     sort(activityList.begin(), activityList.end(),
          [](const Activity&a, const Activity& b){   //a si trova prima di b?
-                    if (!a.hasExpirationDate()  && !b.hasExpirationDate()) return false;
-                    if (!a.hasExpirationDate()) return false;
-                    if (!b.hasExpirationDate()) return true;
-                    return a.getExpirationDate() < b.getExpirationDate();
-    }
+             if (a.hasExpirationDate() && b.hasExpirationDate()) {
+                 return a.getExpirationDate() < b.getExpirationDate();
+             }
+
+             if (a.hasExpirationDate()) return true;
+             if (b.hasExpirationDate()) return false;
+
+             return false;
+         }
     );
+
 }
 
 void TodoList::sortByPriority(bool ascending ) {
@@ -149,11 +154,27 @@ bool TodoList::writeToFile(const std::string& filename) const {
     file << j.dump(4);  // Indentazione di 4 spazi per rendere il JSON leggibile
     file.close();
 
-    // Se la scrittura è andata a buon fine, sostituisci il file originale
+    // Controlla se il file temporaneo è stato scritto correttamente
+    std::ifstream checkTempFile(tempFilename);
+    if (!checkTempFile.is_open()) {
+        std::cerr << "Errore: il file temporaneo non è stato creato correttamente." << std::endl;
+        return false;
+    }
+    checkTempFile.close();
+
+    // Rimuove il file originale prima di rinominare
+    if (std::remove(filename.c_str()) != 0) {
+        std::cerr << "Errore durante la rimozione del file originale." << std::endl;
+        return false;
+    }
+
+    // Se la rimozione è andata a buon fine, rinomina il file temporaneo
     if (std::rename(tempFilename.c_str(), filename.c_str()) != 0) {
         std::cerr << "Errore durante la sostituzione del file originale." << std::endl;
+        std::perror("std::rename");
         return false;
     }
 
     return true;
 }
+

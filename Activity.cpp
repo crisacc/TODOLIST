@@ -33,26 +33,12 @@ void Activity::setPriority(Priority priority) {
     Activity::priority = priority;
 }
 
-bool Activity::setExpirationDate(const string &stringDate, const string &format) {
-    std::tm tm = {};
-    std::istringstream ss(stringDate);
-    ss >> std::get_time(&tm, format.c_str());
-    if (ss.fail()) {
-        std::cerr << "Unvalid date format. Use 'dd/mm/yyyy'" << std::endl;
-        return false;
-    }
-    auto timeT = std::mktime(&tm);
-    if (timeT == -1) {
-        std::cerr << "\n"
-                     "Error converting the date." << std::endl;
-        return false;
-    }
-    expirationDate = std::chrono::system_clock::from_time_t(timeT);
+void Activity::setExpirationDate(Date date) {
+    expirationDate = date;
     gotExpirationDate = true;
-    return true;
 }
 
-std::chrono::system_clock::time_point Activity::getExpirationDate() const {
+Date Activity::getExpirationDate() const {
     return expirationDate;
 }
 
@@ -62,17 +48,6 @@ bool Activity::hasExpirationDate() const {
 
 void Activity::deleteExpirationDate() {
     gotExpirationDate= false;
-}
-
-std::string Activity::expirationDateToString() const {
-    if (!gotExpirationDate) {
-        return "Nessuna scadenza";
-    }
-    std::time_t time = std::chrono::system_clock::to_time_t(expirationDate);
-    std::tm* tm_ptr = std::localtime(&time);
-    std::ostringstream oss;
-    oss << std::put_time(tm_ptr, "%Y-%m-%d");
-    return oss.str();
 }
 
 string Activity::priorityToString() const {
@@ -89,7 +64,7 @@ void Activity::stampActivity()const{
     std::cout << "Activity: " << description;
     std::cout << " - Done: " << (done ? "Yes" : "No");
     std::cout << " - Priority: " << priorityToString();
-    std::cout << " - Expiration Date: " << expirationDateToString()
+    std::cout << " - Expiration Date: " << expirationDate.toString()
               << std::endl;
 }
 
@@ -99,7 +74,7 @@ json Activity::toJson() const {
     j["done"] = done;
     j["priority"] = priorityToString();
     if (gotExpirationDate) {
-        j["expirationDate"] = expirationDateToString();
+        j["expirationDate"] = expirationDate.toString();
     } else {
         j["expirationDate"] = nullptr;
     }
@@ -118,11 +93,19 @@ bool Activity::fromJson(const json& j) {
             else priority = Priority::Unknown;
         }
         if (j.contains("expirationDate") && !j.at("expirationDate").is_null()) {
-            setExpirationDate(j.at("expirationDate").get<std::string>());
-            gotExpirationDate = true;
+            std::string dateStr = j.at("expirationDate").get<std::string>();
+            Date date;
+            if (date.setDateFromString(dateStr)) {
+                expirationDate = date;
+                gotExpirationDate = true;
+            } else {
+                std::cerr << "Data non valida nel JSON: " << dateStr << std::endl;
+                gotExpirationDate = false;
+            }
         } else {
             gotExpirationDate = false;
         }
+
         return true;
     } catch (json::exception& e) {
         std::cerr << "Error parsing JSON: " << e.what() << std::endl;
