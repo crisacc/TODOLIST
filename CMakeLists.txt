@@ -7,6 +7,4 @@ add_subdirectory(TODOLIST)
 
 add_subdirectory(tests)
 
-include_directories(include)
-
 add_executable(TODOLIST main.cpp)

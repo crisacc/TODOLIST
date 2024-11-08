@@ -298,7 +298,7 @@ endfunction()
 # Installs the specified targets and configures the associated pkgconfig files.
 function(install_project)
   if(INSTALL_GTEST)
-    install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/"
+    install(DIRECTORY "../../../../../TODOLIST/include/"
       COMPONENT "${PROJECT_NAME}"
       DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
     # Install the project targets.
