@@ -1,7 +1,7 @@
 add_library(TODOLIB
         Activity.cpp
         TodoList.cpp
-        Activity.cpp
+        Date.cpp
 )
 
 include_directories(include)
