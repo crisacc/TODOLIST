@@ -8,8 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Cristiano/CLionProjects/TODOLIST/Activity.cpp" "CMakeFiles/TODOLIST.dir/Activity.cpp.obj" "gcc" "CMakeFiles/TODOLIST.dir/Activity.cpp.obj.d"
-  "C:/Users/Cristiano/CLionProjects/TODOLIST/TodoList.cpp" "CMakeFiles/TODOLIST.dir/TodoList.cpp.obj" "gcc" "CMakeFiles/TODOLIST.dir/TodoList.cpp.obj.d"
   "C:/Users/Cristiano/CLionProjects/TODOLIST/main.cpp" "CMakeFiles/TODOLIST.dir/main.cpp.obj" "gcc" "CMakeFiles/TODOLIST.dir/main.cpp.obj.d"
   )
 

@@ -7,12 +7,15 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake"
+  "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDependentOption.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake"
+  "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakePackageConfigHelpers.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -20,6 +23,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake"
+  "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
@@ -29,11 +33,25 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake"
   "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake"
+  "C:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/WriteBasicConfigVersionFile.cmake"
   "C:/Users/Cristiano/CLionProjects/TODOLIST/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/TODOLIST/CMakeLists.txt"
   "CMakeFiles/3.29.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.6/CMakeRCCompiler.cmake"
   "CMakeFiles/3.29.6/CMakeSystem.cmake"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googlemock/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googlemock/cmake/gmock.pc.in"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googlemock/cmake/gmock_main.pc.in"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/CMakeLists.txt"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/cmake/Config.cmake.in"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/cmake/gtest.pc.in"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/cmake/gtest_main.pc.in"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -45,9 +63,28 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "TODOLIST/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/basic_tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/lib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/lib/googletest-1.15.2/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/lib/googletest-1.15.2/googletest/generated/gmock.pc"
+  "tests/lib/googletest-1.15.2/googletest/generated/gmock_main.pc"
+  "tests/lib/googletest-1.15.2/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/lib/googletest-1.15.2/googletest/generated/GTestConfigVersion.cmake"
+  "tests/lib/googletest-1.15.2/googletest/generated/GTestConfig.cmake"
+  "tests/lib/googletest-1.15.2/googletest/generated/gtest.pc"
+  "tests/lib/googletest-1.15.2/googletest/generated/gtest_main.pc"
+  "tests/lib/googletest-1.15.2/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TODOLIST.dir/DependInfo.cmake"
+  "TODOLIST/CMakeFiles/TODOLIB.dir/DependInfo.cmake"
+  "tests/basic_tests/CMakeFiles/basic_tests.dir/DependInfo.cmake"
+  "tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
+  "tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )

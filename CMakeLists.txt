@@ -3,12 +3,10 @@ project(TODOLIST)
 
 set(CMAKE_CXX_STANDARD 11)
 
+add_subdirectory(TODOLIST)
+
+add_subdirectory(tests)
+
 include_directories(include)
 
-add_executable(TODOLIST main.cpp
-        Activity.cpp
-        Activity.h
-        TodoList.cpp
-        TodoList.h
-        Date.cpp
-        Date.h)
+add_executable(TODOLIST main.cpp)

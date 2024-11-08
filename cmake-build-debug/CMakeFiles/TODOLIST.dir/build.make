@@ -83,53 +83,19 @@ CMakeFiles/TODOLIST.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TODOLIST.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\main.cpp -o CMakeFiles\TODOLIST.dir\main.cpp.s
 
-CMakeFiles/TODOLIST.dir/Activity.cpp.obj: CMakeFiles/TODOLIST.dir/flags.make
-CMakeFiles/TODOLIST.dir/Activity.cpp.obj: CMakeFiles/TODOLIST.dir/includes_CXX.rsp
-CMakeFiles/TODOLIST.dir/Activity.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/Activity.cpp
-CMakeFiles/TODOLIST.dir/Activity.cpp.obj: CMakeFiles/TODOLIST.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TODOLIST.dir/Activity.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TODOLIST.dir/Activity.cpp.obj -MF CMakeFiles\TODOLIST.dir\Activity.cpp.obj.d -o CMakeFiles\TODOLIST.dir\Activity.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\Activity.cpp
-
-CMakeFiles/TODOLIST.dir/Activity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TODOLIST.dir/Activity.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\Activity.cpp > CMakeFiles\TODOLIST.dir\Activity.cpp.i
-
-CMakeFiles/TODOLIST.dir/Activity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TODOLIST.dir/Activity.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\Activity.cpp -o CMakeFiles\TODOLIST.dir\Activity.cpp.s
-
-CMakeFiles/TODOLIST.dir/TodoList.cpp.obj: CMakeFiles/TODOLIST.dir/flags.make
-CMakeFiles/TODOLIST.dir/TodoList.cpp.obj: CMakeFiles/TODOLIST.dir/includes_CXX.rsp
-CMakeFiles/TODOLIST.dir/TodoList.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/TodoList.cpp
-CMakeFiles/TODOLIST.dir/TodoList.cpp.obj: CMakeFiles/TODOLIST.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TODOLIST.dir/TodoList.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TODOLIST.dir/TodoList.cpp.obj -MF CMakeFiles\TODOLIST.dir\TodoList.cpp.obj.d -o CMakeFiles\TODOLIST.dir\TodoList.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\TodoList.cpp
-
-CMakeFiles/TODOLIST.dir/TodoList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TODOLIST.dir/TodoList.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\TodoList.cpp > CMakeFiles\TODOLIST.dir\TodoList.cpp.i
-
-CMakeFiles/TODOLIST.dir/TodoList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TODOLIST.dir/TodoList.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\TodoList.cpp -o CMakeFiles\TODOLIST.dir\TodoList.cpp.s
-
 # Object files for target TODOLIST
 TODOLIST_OBJECTS = \
-"CMakeFiles/TODOLIST.dir/main.cpp.obj" \
-"CMakeFiles/TODOLIST.dir/Activity.cpp.obj" \
-"CMakeFiles/TODOLIST.dir/TodoList.cpp.obj"
+"CMakeFiles/TODOLIST.dir/main.cpp.obj"
 
 # External object files for target TODOLIST
 TODOLIST_EXTERNAL_OBJECTS =
 
 TODOLIST.exe: CMakeFiles/TODOLIST.dir/main.cpp.obj
-TODOLIST.exe: CMakeFiles/TODOLIST.dir/Activity.cpp.obj
-TODOLIST.exe: CMakeFiles/TODOLIST.dir/TodoList.cpp.obj
 TODOLIST.exe: CMakeFiles/TODOLIST.dir/build.make
 TODOLIST.exe: CMakeFiles/TODOLIST.dir/linkLibs.rsp
 TODOLIST.exe: CMakeFiles/TODOLIST.dir/objects1.rsp
 TODOLIST.exe: CMakeFiles/TODOLIST.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TODOLIST.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable TODOLIST.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TODOLIST.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

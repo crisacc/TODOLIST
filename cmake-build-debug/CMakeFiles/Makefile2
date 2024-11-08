@@ -63,15 +63,134 @@ CMAKE_BINARY_DIR = C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/TODOLIST.dir/all
+all: TODOLIST/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: TODOLIST/preinstall
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/TODOLIST.dir/clean
+clean: TODOLIST/clean
+clean: tests/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory TODOLIST
+
+# Recursive "all" directory target.
+TODOLIST/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+.PHONY : TODOLIST/all
+
+# Recursive "preinstall" directory target.
+TODOLIST/preinstall:
+.PHONY : TODOLIST/preinstall
+
+# Recursive "clean" directory target.
+TODOLIST/clean: TODOLIST/CMakeFiles/TODOLIB.dir/clean
+.PHONY : TODOLIST/clean
+
+#=============================================================================
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/basic_tests/all
+tests/all: tests/lib/all
+.PHONY : tests/all
+
+# Recursive "preinstall" directory target.
+tests/preinstall: tests/basic_tests/preinstall
+tests/preinstall: tests/lib/preinstall
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/basic_tests/clean
+tests/clean: tests/lib/clean
+.PHONY : tests/clean
+
+#=============================================================================
+# Directory level rules for directory tests/basic_tests
+
+# Recursive "all" directory target.
+tests/basic_tests/all: tests/basic_tests/CMakeFiles/basic_tests.dir/all
+.PHONY : tests/basic_tests/all
+
+# Recursive "preinstall" directory target.
+tests/basic_tests/preinstall:
+.PHONY : tests/basic_tests/preinstall
+
+# Recursive "clean" directory target.
+tests/basic_tests/clean: tests/basic_tests/CMakeFiles/basic_tests.dir/clean
+.PHONY : tests/basic_tests/clean
+
+#=============================================================================
+# Directory level rules for directory tests/lib
+
+# Recursive "all" directory target.
+tests/lib/all: tests/lib/googletest-1.15.2/all
+.PHONY : tests/lib/all
+
+# Recursive "preinstall" directory target.
+tests/lib/preinstall: tests/lib/googletest-1.15.2/preinstall
+.PHONY : tests/lib/preinstall
+
+# Recursive "clean" directory target.
+tests/lib/clean: tests/lib/googletest-1.15.2/clean
+.PHONY : tests/lib/clean
+
+#=============================================================================
+# Directory level rules for directory tests/lib/googletest-1.15.2
+
+# Recursive "all" directory target.
+tests/lib/googletest-1.15.2/all: tests/lib/googletest-1.15.2/googlemock/all
+.PHONY : tests/lib/googletest-1.15.2/all
+
+# Recursive "preinstall" directory target.
+tests/lib/googletest-1.15.2/preinstall: tests/lib/googletest-1.15.2/googlemock/preinstall
+.PHONY : tests/lib/googletest-1.15.2/preinstall
+
+# Recursive "clean" directory target.
+tests/lib/googletest-1.15.2/clean: tests/lib/googletest-1.15.2/googlemock/clean
+.PHONY : tests/lib/googletest-1.15.2/clean
+
+#=============================================================================
+# Directory level rules for directory tests/lib/googletest-1.15.2/googlemock
+
+# Recursive "all" directory target.
+tests/lib/googletest-1.15.2/googlemock/all: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all
+tests/lib/googletest-1.15.2/googlemock/all: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all
+tests/lib/googletest-1.15.2/googlemock/all: tests/lib/googletest-1.15.2/googletest/all
+.PHONY : tests/lib/googletest-1.15.2/googlemock/all
+
+# Recursive "preinstall" directory target.
+tests/lib/googletest-1.15.2/googlemock/preinstall: tests/lib/googletest-1.15.2/googletest/preinstall
+.PHONY : tests/lib/googletest-1.15.2/googlemock/preinstall
+
+# Recursive "clean" directory target.
+tests/lib/googletest-1.15.2/googlemock/clean: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/clean
+tests/lib/googletest-1.15.2/googlemock/clean: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/clean
+tests/lib/googletest-1.15.2/googlemock/clean: tests/lib/googletest-1.15.2/googletest/clean
+.PHONY : tests/lib/googletest-1.15.2/googlemock/clean
+
+#=============================================================================
+# Directory level rules for directory tests/lib/googletest-1.15.2/googletest
+
+# Recursive "all" directory target.
+tests/lib/googletest-1.15.2/googletest/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+tests/lib/googletest-1.15.2/googletest/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+.PHONY : tests/lib/googletest-1.15.2/googletest/all
+
+# Recursive "preinstall" directory target.
+tests/lib/googletest-1.15.2/googletest/preinstall:
+.PHONY : tests/lib/googletest-1.15.2/googletest/preinstall
+
+# Recursive "clean" directory target.
+tests/lib/googletest-1.15.2/googletest/clean: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/clean
+tests/lib/googletest-1.15.2/googletest/clean: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : tests/lib/googletest-1.15.2/googletest/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/TODOLIST.dir
@@ -80,12 +199,12 @@ clean: CMakeFiles/TODOLIST.dir/clean
 CMakeFiles/TODOLIST.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target TODOLIST"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=4,5 "Built target TODOLIST"
 .PHONY : CMakeFiles/TODOLIST.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TODOLIST.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TODOLIST.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TODOLIST.dir/rule
@@ -98,6 +217,163 @@ TODOLIST: CMakeFiles/TODOLIST.dir/rule
 CMakeFiles/TODOLIST.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/clean
 .PHONY : CMakeFiles/TODOLIST.dir/clean
+
+#=============================================================================
+# Target rules for target TODOLIST/CMakeFiles/TODOLIB.dir
+
+# All Build rule for target.
+TODOLIST/CMakeFiles/TODOLIB.dir/all:
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/depend
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target TODOLIB"
+.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/all
+
+# Build rule for subdir invocation for target.
+TODOLIST/CMakeFiles/TODOLIB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/rule
+
+# Convenience name for target.
+TODOLIB: TODOLIST/CMakeFiles/TODOLIB.dir/rule
+.PHONY : TODOLIB
+
+# clean rule for target.
+TODOLIST/CMakeFiles/TODOLIB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/clean
+.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/clean
+
+#=============================================================================
+# Target rules for target tests/basic_tests/CMakeFiles/basic_tests.dir
+
+# All Build rule for target.
+tests/basic_tests/CMakeFiles/basic_tests.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=6,7 "Built target basic_tests"
+.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/all
+
+# Build rule for subdir invocation for target.
+tests/basic_tests/CMakeFiles/basic_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/basic_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/rule
+
+# Convenience name for target.
+basic_tests: tests/basic_tests/CMakeFiles/basic_tests.dir/rule
+.PHONY : basic_tests
+
+# clean rule for target.
+tests/basic_tests/CMakeFiles/basic_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/clean
+.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/clean
+
+#=============================================================================
+# Target rules for target tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=8,9 "Built target gmock"
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/rule
+.PHONY : gmock
+
+# clean rule for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/clean
+
+#=============================================================================
+# Target rules for target tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock_main.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock_main.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=10,11 "Built target gmock_main"
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Build rule for subdir invocation for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/rule
+.PHONY : gmock_main
+
+# clean rule for target.
+tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock_main.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/clean
+
+#=============================================================================
+# Target rules for target tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=12,13 "Built target gtest"
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/rule
+.PHONY : gtest
+
+# clean rule for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=14,15 "Built target gtest_main"
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/rule
+.PHONY : gtest_main
+
+# clean rule for target.
+tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
