@@ -81,8 +81,6 @@ void TodoList::sortByStateAndPriority(bool ascending) {
     );
 }
 
-
-
 void TodoList::sortByStateAndExpirationDate() {
     sort(activityList.begin(), activityList.end(),
         [] (const Activity &a, const Activity& b) {
@@ -96,20 +94,94 @@ void TodoList::sortByStateAndExpirationDate() {
     );
 }
 
+vector<pair<int,Activity*>> TodoList::searchByDescription(const std::string &keyword) {
+    vector<pair<int,Activity*>> results;
+    for (int i = 0; i < activityList.size(); i++) {
+        if (activityList[i].getDescription().find(keyword) != string::npos) {
+            results.emplace_back(i, &activityList[i]);
+        }
+    }
+    return results;
+}
+
+void TodoList::stampVector(const vector<pair<int , Activity*>> &results) const {
+    if (results.empty()){
+        cout << "Nessuna attività trovata.\n";
+        return;
+    }
+    cout << "Attività trovate :\n";
+    for (const auto& [index, activity] : results){
+        cout << index << ". ";
+        activity->stampActivity();
+    }
+}
+
+void TodoList::manageSearchResults(const string& keyword) {
+    vector<pair<int, Activity*>> results = searchByDescription(keyword);
+    stampVector(results);
+
+    if (results.empty()) return;
+
+    cout << "Inserisci l'indice originale dell'attività da gestire (negativo per uscire): ";
+    int index;
+    cin >> index;
+
+    if (index < 0 || index >= activityList.size()) {
+        cout << "Indice non valido.\n";
+        return;
+    }
+
+    cout << "Cosa vuoi fare? (1 = Modifica descrizione, 2 = Cambia stato, 3 = Cancella): ";
+    int action;
+    cin >> action;
+
+    if (action == 1) {
+        cout << "Nuova descrizione: ";
+        string newDesc;
+        cin.ignore();
+        getline(cin, newDesc);
+        activityList[index].setDescription(newDesc);
+    }
+    else if (action == 2) {
+        activityList[index].setDone(!activityList[index].isDone());
+        cout << "Stato aggiornato.\n";
+    }
+    else if (action == 3) {
+        activityList.erase(activityList.begin() + index);
+        cout << "Attività eliminata.\n";
+    }
+    else {
+        cout << "Azione non valida.\n";
+    }
+}
+
 void TodoList::stampAll() {
 
+    if (activityList.empty()) {
+        cout << "La lista delle attività è vuota." << endl;
+        return;
+    }
+
+    cout << "Elenco delle attività:\n";
     for (int i = 0; i < activityList.size(); ++i) {
+        cout << "-----------------------------\n";
         cout << i+1 << ".";
         activityList[i].stampActivity();
     }
+    cout << "-----------------------------\n";
 
 }
 
 bool TodoList::readFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Impossibile aprire il file per la lettura." << std::endl;
-        return false;
+        std::cerr << "File non trovato. Creazione di un nuovo file vuoto: "<< std::endl;
+        std::ofstream newFile(filename);
+        if (!newFile.is_open()){
+            std::cerr << "Errore nella creazione del file." << std::endl;
+            return false;
+        }
+        return true;
     }
 
     json j;
@@ -136,6 +208,12 @@ bool TodoList::readFromFile(const std::string& filename) {
 bool TodoList::writeToFile(const std::string& filename) const {
     // Nome del file temporaneo
     std::string tempFilename = filename + ".tmp";
+    // Nome del file di backup
+    std::string backupFilename = filename + ".bak";
+
+    if (std::rename(filename.c_str(), backupFilename.c_str()) != 0  &&  errno != ENOENT){
+        std::cerr<< "Errore nel creare il backup del file originale." << std::endl;
+    }
 
     // Scrivi nel file temporaneo
     std::ofstream file(tempFilename);
@@ -162,13 +240,7 @@ bool TodoList::writeToFile(const std::string& filename) const {
     }
     checkTempFile.close();
 
-    // Rimuove il file originale prima di rinominare
-    if (std::remove(filename.c_str()) != 0) {
-        std::cerr << "Errore durante la rimozione del file originale." << std::endl;
-        return false;
-    }
-
-    // Se la rimozione è andata a buon fine, rinomina il file temporaneo
+    //  rinomina il file temporaneo
     if (std::rename(tempFilename.c_str(), filename.c_str()) != 0) {
         std::cerr << "Errore durante la sostituzione del file originale." << std::endl;
         std::perror("std::rename");

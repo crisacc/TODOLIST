@@ -15,6 +15,10 @@ private:
 
 public:
 
+    const std::vector<Activity>& getActivityList() const {
+        return activityList;
+    }
+
     void addActivity (const Activity& activity);
 
     void deleteActivity(int index);
@@ -32,6 +36,12 @@ public:
     void sortByStateAndPriority(bool ascending= true);
 
     void sortByStateAndExpirationDate();
+
+    vector<pair<int, Activity*>> searchByDescription (const string& keyword);
+
+    void stampVector(const vector<pair<int , Activity*>> &results)const;
+
+    void manageSearchResults(const string& keyword);
 
     void stampAll();
 

@@ -15,10 +15,10 @@ using json = nlohmann::json;
 using namespace std;
 
 enum class Priority {
-    High,
-    Medium,
+    Unknown,
     Low,
-    Unknown
+    Medium,
+    High
 };
 
 class Activity{
