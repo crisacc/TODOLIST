@@ -235,8 +235,11 @@ bool TodoList::writeToFile(const std::string& filename) const {
     // Nome del file di backup
     std::string backupFilename = filename + ".bak";
 
-    if (std::rename(filename.c_str(), backupFilename.c_str()) != 0  &&  errno != ENOENT){
-        std::cerr<< "Errore nel creare il backup del file originale." << std::endl;
+    if (std::ifstream(filename)){ // crea il backu solo se ul file originale esiste
+        if (std::rename(filename.c_str(), backupFilename.c_str()) != 0  &&  errno != ENOENT){
+            std::cerr<< "Errore nel creare il backup del file originale." << std::endl;
+            return false; // se fallisce meglio non procedere
+        }
     }
 
     // Scrivi nel file temporaneo
@@ -268,8 +271,16 @@ bool TodoList::writeToFile(const std::string& filename) const {
     if (std::rename(tempFilename.c_str(), filename.c_str()) != 0) {
         std::cerr << "Errore durante la sostituzione del file originale." << std::endl;
         std::perror("std::rename");
+
+        // Tenta di ripristinare il backup
+        if (std::rename(backupFilename.c_str(), filename.c_str()) != 0) {
+            std::cerr << "Errore nel ripristino del backup. Il file potrebbe essere corrotto." << std::endl;
+        }
+
         return false;
     }
+
+    std::remove(backupFilename.c_str()); // tutto è andato bene, rimosso backup
 
     return true;
 }
