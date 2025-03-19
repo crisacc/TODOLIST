@@ -9,7 +9,6 @@
 
 Date::Date(int day, int month, int year) {
     if (!setDate(day, month, year)) {
-        // Imposta una data di default se la data fornita è invalida
         this->day = 1;
         this->month = 1;
         this->year = 1970;

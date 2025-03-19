@@ -187,17 +187,43 @@ TODOLIB/fast:
 .PHONY : TODOLIB/fast
 
 #=============================================================================
-# Target rules for targets named basic_tests
+# Target rules for targets named DateTest
 
 # Build rule for target.
-basic_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 basic_tests
-.PHONY : basic_tests
+DateTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DateTest
+.PHONY : DateTest
 
 # fast build rule for target.
-basic_tests/fast:
-	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/build
-.PHONY : basic_tests/fast
+DateTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/build
+.PHONY : DateTest/fast
+
+#=============================================================================
+# Target rules for targets named ActivityTest
+
+# Build rule for target.
+ActivityTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ActivityTest
+.PHONY : ActivityTest
+
+# fast build rule for target.
+ActivityTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/build
+.PHONY : ActivityTest/fast
+
+#=============================================================================
+# Target rules for targets named TodoListTest
+
+# Build rule for target.
+TodoListTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TodoListTest
+.PHONY : TodoListTest
+
+# fast build rule for target.
+TodoListTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/build
+.PHONY : TodoListTest/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -287,9 +313,11 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... ActivityTest
+	@echo ... DateTest
 	@echo ... TODOLIB
 	@echo ... TODOLIST
-	@echo ... basic_tests
+	@echo ... TodoListTest
 	@echo ... gmock
 	@echo ... gmock_main
 	@echo ... gtest

@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/test_file.cpp" "tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj" "gcc" "tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj.d"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/ActivityTests.cpp" "tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj" "gcc" "tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj.d"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/DateTests.cpp" "tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj" "gcc" "tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj.d"
+  "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/TodoListTests.cpp" "tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj" "gcc" "tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

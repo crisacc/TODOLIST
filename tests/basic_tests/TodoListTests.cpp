@@ -1,3 +1,180 @@
 //
 // Created by Cristiano on 08/11/2024.
 //
+#include <gtest/gtest.h>
+#include "TodoList.h"
+#include "Activity.h"
+#include "Date.h"
+#include <fstream>
+
+// Test per l'aggiunta di attività
+TEST(TodoListTest, AddActivity) {
+    TodoList todoList;
+    Activity activity("Test Activity", Priority::Medium, Date(15, 10, 2025));
+    todoList.addActivity(activity);
+
+    ASSERT_EQ(todoList.getActivityList().size(), 1);
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Test Activity");
+    EXPECT_EQ(todoList.getActivityList()[0].getPriority(), Priority::Medium);
+    EXPECT_EQ(todoList.getActivityList()[0].getExpirationDate().toString(), "15/10/2025");
+}
+
+// Test per la cancellazione di attività con indice valido e non valido
+TEST(TodoListTest, DeleteActivity) {
+    TodoList todoList;
+    todoList.addActivity(Activity("Activity 1", Priority::Low));
+    todoList.addActivity(Activity("Activity 2", Priority::High));
+
+    todoList.deleteActivity(1);  // Elimina "Activity 2"
+    ASSERT_EQ(todoList.getActivityList().size(), 1);
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Activity 1");
+
+    int sizeBefore = todoList.getActivityList().size();
+    todoList.deleteActivity(10);  // Indice non valido, dimensione invariata
+    EXPECT_EQ(todoList.getActivityList().size(), sizeBefore);
+}
+
+// Test per il cambio di stato dell'attività
+TEST(TodoListTest, ChangeActivityStatus) {
+    TodoList todoList;
+    todoList.addActivity(Activity("Activity 1", Priority::Low));
+    todoList.changeActivityStatus(0, true);
+    EXPECT_TRUE(todoList.getActivityList()[0].isDone());
+
+    // Indice non valido, lo stato non deve cambiare
+    bool doneBefore = todoList.getActivityList()[0].isDone();
+    todoList.changeActivityStatus(10, false);
+    EXPECT_EQ(todoList.getActivityList()[0].isDone(), doneBefore);
+}
+
+// Test per il cambio di descrizione dell'attività
+TEST(TodoListTest, ChangeActivityDescription) {
+    TodoList todoList;
+    todoList.addActivity(Activity("Activity 1", Priority::Low));
+    todoList.changeActivityDescription(0, "Updated Description");
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Updated Description");
+
+    // Indice non valido, la descrizione non deve cambiare
+    std::string descriptionBefore = todoList.getActivityList()[0].getDescription();
+    todoList.changeActivityDescription(10, "Another Description");
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), descriptionBefore);
+}
+
+// Test per l'ordinamento per data di scadenza
+TEST(TodoListTest, SortByExpirationDate) {
+    TodoList todoList;
+    todoList.addActivity(Activity("Activity with Date", Priority::Medium, Date(1, 1, 2025)));
+    todoList.addActivity(Activity("Activity without Date", Priority::High));
+
+    todoList.sortByExpirationDate();
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Activity with Date");
+    EXPECT_EQ(todoList.getActivityList()[1].getDescription(), "Activity without Date");
+}
+
+// Test per l'ordinamento per priorità
+TEST(TodoListTest, SortByPriority) {
+    TodoList todoList;
+    todoList.addActivity(Activity("Low Priority", Priority::Low));
+    todoList.addActivity(Activity("High Priority", Priority::High));
+
+    todoList.sortByPriority(true);  // Ordinamento crescente
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Low Priority");
+    EXPECT_EQ(todoList.getActivityList()[1].getDescription(), "High Priority");
+
+    todoList.sortByPriority(false);  // Ordinamento decrescente
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "High Priority");
+    EXPECT_EQ(todoList.getActivityList()[1].getDescription(), "Low Priority");
+}
+
+// Test per l'ordinamento per stato
+TEST(TodoListTest, SortByState) {
+    TodoList todoList;
+    Activity doneActivity("Done Activity", Priority::Medium);
+    doneActivity.setDone(true);
+    Activity notDoneActivity("Not Done Activity", Priority::High);
+    todoList.addActivity(notDoneActivity);
+    todoList.addActivity(doneActivity);
+
+    todoList.sortByState();
+    EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Not Done Activity");
+    EXPECT_EQ(todoList.getActivityList()[1].getDescription(), "Done Activity");
+}
+
+//test per ordinamento combinato stato e priorità
+TEST(TodoListTest, SortByStateAndPriority) {
+    TodoList list;
+    Activity a1("Task A", Priority::Low);
+    Activity a2("Task B", Priority::High);
+    Activity a3("Task C", Priority::Medium);
+    a3.setDone(true);
+
+    list.addActivity(a1);
+    list.addActivity(a2);
+    list.addActivity(a3);
+    list.sortByStateAndPriority(true);
+
+    EXPECT_EQ(list.getActivityList()[0].getDescription(), "Task B");
+    EXPECT_EQ(list.getActivityList()[1].getDescription(), "Task A");
+    EXPECT_EQ(list.getActivityList()[2].getDescription(), "Task C");
+}
+
+//test per non eliminare o modificare attività con indici non validi
+TEST(TodoListTest, InvalidIndexHandling) {
+    TodoList list;
+    list.addActivity(Activity("Task A", Priority::High));
+
+    // Tentativo di eliminare un'attività inesistente
+    list.deleteActivity(10);
+    EXPECT_EQ(list.getActivityList().size(), 1);
+
+    // Tentativo di cambiare stato di un'attività inesistente
+    list.changeActivityStatus(10, true);
+    EXPECT_FALSE(list.getActivityList()[0].isDone());
+
+    // Tentativo di cambiare descrizione con un indice non valido
+    list.changeActivityDescription(-1, "Nuova descrizione");
+    EXPECT_EQ(list.getActivityList()[0].getDescription(), "Task A");
+}
+
+//test per metodo ricerca er descrizione
+TEST(TodoListTest, SearchByDescription) {
+    TodoList list;
+    list.addActivity(Activity("Comprare latte", Priority::High));
+    list.addActivity(Activity("Allenamento palestra", Priority::Medium));
+    list.addActivity(Activity("Comprare pane", Priority::High));
+
+    auto results = list.searchByDescription("Comprare");
+
+    EXPECT_EQ(results.size(), 2);
+    EXPECT_EQ(results[0].second->getDescription(), "Comprare latte");
+    EXPECT_EQ(results[1].second->getDescription(), "Comprare pane");
+}
+
+// Test per il salvataggio e caricamento da file
+TEST(TodoListTest, SaveAndLoadFromFile) {
+    TodoList list;
+    Activity activity("Test file", Priority::High);
+    list.addActivity(activity);
+
+    EXPECT_TRUE(list.writeToFile("test.json"));
+
+    TodoList newList;
+    EXPECT_TRUE(newList.readFromFile("test.json"));
+    ASSERT_EQ(newList.getActivityList().size(), 1);
+    EXPECT_EQ(newList.getActivityList()[0].getDescription(), "Test file");
+}
+
+// test per il salvataggio auutomatico
+TEST(TodoListTest, AutoSaveTriggered) {
+    TodoList list;
+    for (int i = 0; i < 5; ++i) {
+        list.addActivity(Activity("Task " + std::to_string(i), Priority::High));
+    }
+
+    // Controlla se il contatore è stato azzerato dopo 5 modifiche
+    EXPECT_EQ(list.getChangeCounter(), 0);
+
+    // Verifica che il file sia stato scritto
+    std::ifstream file("todo_list.json");
+    EXPECT_TRUE(file.good());  // Controlla se il file esiste
+}

@@ -15,6 +15,10 @@ private:
     bool modified=false;
     const int saveThreshold=5;
     int changeCounter;
+public:
+    int getChangeCounter() const;
+
+    void setChangeCounter(int changeCounter);
 
 public:
 

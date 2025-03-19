@@ -115,7 +115,9 @@ tests/clean: tests/lib/clean
 # Directory level rules for directory tests/basic_tests
 
 # Recursive "all" directory target.
-tests/basic_tests/all: tests/basic_tests/CMakeFiles/basic_tests.dir/all
+tests/basic_tests/all: tests/basic_tests/CMakeFiles/DateTest.dir/all
+tests/basic_tests/all: tests/basic_tests/CMakeFiles/ActivityTest.dir/all
+tests/basic_tests/all: tests/basic_tests/CMakeFiles/TodoListTest.dir/all
 .PHONY : tests/basic_tests/all
 
 # Recursive "preinstall" directory target.
@@ -123,7 +125,9 @@ tests/basic_tests/preinstall:
 .PHONY : tests/basic_tests/preinstall
 
 # Recursive "clean" directory target.
-tests/basic_tests/clean: tests/basic_tests/CMakeFiles/basic_tests.dir/clean
+tests/basic_tests/clean: tests/basic_tests/CMakeFiles/DateTest.dir/clean
+tests/basic_tests/clean: tests/basic_tests/CMakeFiles/ActivityTest.dir/clean
+tests/basic_tests/clean: tests/basic_tests/CMakeFiles/TodoListTest.dir/clean
 .PHONY : tests/basic_tests/clean
 
 #=============================================================================
@@ -199,7 +203,7 @@ tests/lib/googletest-1.15.2/googletest/clean: tests/lib/googletest-1.15.2/google
 CMakeFiles/TODOLIST.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=4,5 "Built target TODOLIST"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target TODOLIST"
 .PHONY : CMakeFiles/TODOLIST.dir/all
 
 # Build rule for subdir invocation for target.
@@ -225,12 +229,12 @@ CMakeFiles/TODOLIST.dir/clean:
 TODOLIST/CMakeFiles/TODOLIB.dir/all:
 	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/depend
 	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target TODOLIB"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=5,6,7,8 "Built target TODOLIB"
 .PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/all
 
 # Build rule for subdir invocation for target.
 TODOLIST/CMakeFiles/TODOLIB.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIB.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
 .PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/rule
@@ -245,30 +249,88 @@ TODOLIST/CMakeFiles/TODOLIB.dir/clean:
 .PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/clean
 
 #=============================================================================
-# Target rules for target tests/basic_tests/CMakeFiles/basic_tests.dir
+# Target rules for target tests/basic_tests/CMakeFiles/DateTest.dir
 
 # All Build rule for target.
-tests/basic_tests/CMakeFiles/basic_tests.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
-	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=6,7 "Built target basic_tests"
-.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/all
+tests/basic_tests/CMakeFiles/DateTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+tests/basic_tests/CMakeFiles/DateTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+tests/basic_tests/CMakeFiles/DateTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target DateTest"
+.PHONY : tests/basic_tests/CMakeFiles/DateTest.dir/all
 
 # Build rule for subdir invocation for target.
-tests/basic_tests/CMakeFiles/basic_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/basic_tests.dir/all
+tests/basic_tests/CMakeFiles/DateTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/DateTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
-.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/rule
+.PHONY : tests/basic_tests/CMakeFiles/DateTest.dir/rule
 
 # Convenience name for target.
-basic_tests: tests/basic_tests/CMakeFiles/basic_tests.dir/rule
-.PHONY : basic_tests
+DateTest: tests/basic_tests/CMakeFiles/DateTest.dir/rule
+.PHONY : DateTest
 
 # clean rule for target.
-tests/basic_tests/CMakeFiles/basic_tests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/clean
-.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/clean
+tests/basic_tests/CMakeFiles/DateTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/clean
+.PHONY : tests/basic_tests/CMakeFiles/DateTest.dir/clean
+
+#=============================================================================
+# Target rules for target tests/basic_tests/CMakeFiles/ActivityTest.dir
+
+# All Build rule for target.
+tests/basic_tests/CMakeFiles/ActivityTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+tests/basic_tests/CMakeFiles/ActivityTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+tests/basic_tests/CMakeFiles/ActivityTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target ActivityTest"
+.PHONY : tests/basic_tests/CMakeFiles/ActivityTest.dir/all
+
+# Build rule for subdir invocation for target.
+tests/basic_tests/CMakeFiles/ActivityTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/ActivityTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
+
+# Convenience name for target.
+ActivityTest: tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
+.PHONY : ActivityTest
+
+# clean rule for target.
+tests/basic_tests/CMakeFiles/ActivityTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/clean
+.PHONY : tests/basic_tests/CMakeFiles/ActivityTest.dir/clean
+
+#=============================================================================
+# Target rules for target tests/basic_tests/CMakeFiles/TodoListTest.dir
+
+# All Build rule for target.
+tests/basic_tests/CMakeFiles/TodoListTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+tests/basic_tests/CMakeFiles/TodoListTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
+tests/basic_tests/CMakeFiles/TodoListTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target TodoListTest"
+.PHONY : tests/basic_tests/CMakeFiles/TodoListTest.dir/all
+
+# Build rule for subdir invocation for target.
+tests/basic_tests/CMakeFiles/TodoListTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/TodoListTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
+
+# Convenience name for target.
+TodoListTest: tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
+.PHONY : TodoListTest
+
+# clean rule for target.
+tests/basic_tests/CMakeFiles/TodoListTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/clean
+.PHONY : tests/basic_tests/CMakeFiles/TodoListTest.dir/clean
 
 #=============================================================================
 # Target rules for target tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir
@@ -277,7 +339,7 @@ tests/basic_tests/CMakeFiles/basic_tests.dir/clean:
 tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=8,9 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target gmock"
 .PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -304,7 +366,7 @@ tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all: tests/lib/
 tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock_main.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googlemock\CMakeFiles\gmock_main.dir\build.make tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=10,11 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target gmock_main"
 .PHONY : tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -330,7 +392,7 @@ tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/clean:
 tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=12,13 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target gtest"
 .PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -356,7 +418,7 @@ tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/clean:
 tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=14,15 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target gtest_main"
 .PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.

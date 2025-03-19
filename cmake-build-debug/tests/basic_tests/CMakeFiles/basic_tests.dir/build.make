@@ -68,35 +68,69 @@ include tests/basic_tests/CMakeFiles/basic_tests.dir/progress.make
 # Include the compile flags for this target's objects.
 include tests/basic_tests/CMakeFiles/basic_tests.dir/flags.make
 
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/flags.make
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/includes_CXX.rsp
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/test_file.cpp
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj"
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj -MF CMakeFiles\basic_tests.dir\test_file.cpp.obj.d -o CMakeFiles\basic_tests.dir\test_file.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\test_file.cpp
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/flags.make
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/includes_CXX.rsp
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/DateTests.cpp
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj -MF CMakeFiles\basic_tests.dir\DateTests.cpp.obj.d -o CMakeFiles\basic_tests.dir\DateTests.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\DateTests.cpp
 
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basic_tests.dir/test_file.cpp.i"
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\test_file.cpp > CMakeFiles\basic_tests.dir\test_file.cpp.i
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basic_tests.dir/DateTests.cpp.i"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\DateTests.cpp > CMakeFiles\basic_tests.dir\DateTests.cpp.i
 
-tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basic_tests.dir/test_file.cpp.s"
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\test_file.cpp -o CMakeFiles\basic_tests.dir\test_file.cpp.s
+tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basic_tests.dir/DateTests.cpp.s"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\DateTests.cpp -o CMakeFiles\basic_tests.dir\DateTests.cpp.s
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/flags.make
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/includes_CXX.rsp
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/ActivityTests.cpp
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj -MF CMakeFiles\basic_tests.dir\ActivityTests.cpp.obj.d -o CMakeFiles\basic_tests.dir\ActivityTests.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\ActivityTests.cpp
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basic_tests.dir/ActivityTests.cpp.i"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\ActivityTests.cpp > CMakeFiles\basic_tests.dir\ActivityTests.cpp.i
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basic_tests.dir/ActivityTests.cpp.s"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\ActivityTests.cpp -o CMakeFiles\basic_tests.dir\ActivityTests.cpp.s
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/flags.make
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/includes_CXX.rsp
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj: C:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/TodoListTests.cpp
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj: tests/basic_tests/CMakeFiles/basic_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj -MF CMakeFiles\basic_tests.dir\TodoListTests.cpp.obj.d -o CMakeFiles\basic_tests.dir\TodoListTests.cpp.obj -c C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\TodoListTests.cpp
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basic_tests.dir/TodoListTests.cpp.i"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\TodoListTests.cpp > CMakeFiles\basic_tests.dir\TodoListTests.cpp.i
+
+tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basic_tests.dir/TodoListTests.cpp.s"
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cristiano\CLionProjects\TODOLIST\tests\basic_tests\TodoListTests.cpp -o CMakeFiles\basic_tests.dir\TodoListTests.cpp.s
 
 # Object files for target basic_tests
 basic_tests_OBJECTS = \
-"CMakeFiles/basic_tests.dir/test_file.cpp.obj"
+"CMakeFiles/basic_tests.dir/DateTests.cpp.obj" \
+"CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj" \
+"CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj"
 
 # External object files for target basic_tests
 basic_tests_EXTERNAL_OBJECTS =
 
-tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj
+tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/DateTests.cpp.obj
+tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/ActivityTests.cpp.obj
+tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/TodoListTests.cpp.obj
 tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/build.make
 tests/basic_tests/basic_tests.exe: TODOLIST/libTODOLIB.a
 tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/linkLibs.rsp
 tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/objects1.rsp
 tests/basic_tests/basic_tests.exe: tests/basic_tests/CMakeFiles/basic_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable basic_tests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable basic_tests.exe"
 	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\tests\basic_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\basic_tests.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -198,6 +198,30 @@ Activity.cpp.s:
 	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Activity.cpp.s
 .PHONY : Activity.cpp.s
 
+Date.obj: Date.cpp.obj
+.PHONY : Date.obj
+
+# target to build an object file
+Date.cpp.obj:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.obj
+.PHONY : Date.cpp.obj
+
+Date.i: Date.cpp.i
+.PHONY : Date.i
+
+# target to preprocess a source file
+Date.cpp.i:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.i
+.PHONY : Date.cpp.i
+
+Date.s: Date.cpp.s
+.PHONY : Date.s
+
+# target to generate assembly for a file
+Date.cpp.s:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.s
+.PHONY : Date.cpp.s
+
 TodoList.obj: TodoList.cpp.obj
 .PHONY : TodoList.obj
 
@@ -238,6 +262,9 @@ help:
 	@echo ... Activity.obj
 	@echo ... Activity.i
 	@echo ... Activity.s
+	@echo ... Date.obj
+	@echo ... Date.i
+	@echo ... Date.s
 	@echo ... TodoList.obj
 	@echo ... TodoList.i
 	@echo ... TodoList.s

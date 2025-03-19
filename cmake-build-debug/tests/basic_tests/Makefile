@@ -161,42 +161,118 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/basic_tests/CMakeFiles/basic_tests.dir/rule:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/basic_tests.dir/rule
-.PHONY : tests/basic_tests/CMakeFiles/basic_tests.dir/rule
+tests/basic_tests/CMakeFiles/DateTest.dir/rule:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/DateTest.dir/rule
+.PHONY : tests/basic_tests/CMakeFiles/DateTest.dir/rule
 
 # Convenience name for target.
-basic_tests: tests/basic_tests/CMakeFiles/basic_tests.dir/rule
-.PHONY : basic_tests
+DateTest: tests/basic_tests/CMakeFiles/DateTest.dir/rule
+.PHONY : DateTest
 
 # fast build rule for target.
-basic_tests/fast:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/build
-.PHONY : basic_tests/fast
+DateTest/fast:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/build
+.PHONY : DateTest/fast
 
-test_file.obj: test_file.cpp.obj
-.PHONY : test_file.obj
+# Convenience name for target.
+tests/basic_tests/CMakeFiles/ActivityTest.dir/rule:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
+.PHONY : tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
+
+# Convenience name for target.
+ActivityTest: tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
+.PHONY : ActivityTest
+
+# fast build rule for target.
+ActivityTest/fast:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/build
+.PHONY : ActivityTest/fast
+
+# Convenience name for target.
+tests/basic_tests/CMakeFiles/TodoListTest.dir/rule:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
+.PHONY : tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
+
+# Convenience name for target.
+TodoListTest: tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
+.PHONY : TodoListTest
+
+# fast build rule for target.
+TodoListTest/fast:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/build
+.PHONY : TodoListTest/fast
+
+ActivityTests.obj: ActivityTests.cpp.obj
+.PHONY : ActivityTests.obj
 
 # target to build an object file
-test_file.cpp.obj:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.obj
-.PHONY : test_file.cpp.obj
+ActivityTests.cpp.obj:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/ActivityTests.cpp.obj
+.PHONY : ActivityTests.cpp.obj
 
-test_file.i: test_file.cpp.i
-.PHONY : test_file.i
+ActivityTests.i: ActivityTests.cpp.i
+.PHONY : ActivityTests.i
 
 # target to preprocess a source file
-test_file.cpp.i:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.i
-.PHONY : test_file.cpp.i
+ActivityTests.cpp.i:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/ActivityTests.cpp.i
+.PHONY : ActivityTests.cpp.i
 
-test_file.s: test_file.cpp.s
-.PHONY : test_file.s
+ActivityTests.s: ActivityTests.cpp.s
+.PHONY : ActivityTests.s
 
 # target to generate assembly for a file
-test_file.cpp.s:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\basic_tests.dir\build.make tests/basic_tests/CMakeFiles/basic_tests.dir/test_file.cpp.s
-.PHONY : test_file.cpp.s
+ActivityTests.cpp.s:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/ActivityTests.cpp.s
+.PHONY : ActivityTests.cpp.s
+
+DateTests.obj: DateTests.cpp.obj
+.PHONY : DateTests.obj
+
+# target to build an object file
+DateTests.cpp.obj:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/DateTests.cpp.obj
+.PHONY : DateTests.cpp.obj
+
+DateTests.i: DateTests.cpp.i
+.PHONY : DateTests.i
+
+# target to preprocess a source file
+DateTests.cpp.i:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/DateTests.cpp.i
+.PHONY : DateTests.cpp.i
+
+DateTests.s: DateTests.cpp.s
+.PHONY : DateTests.s
+
+# target to generate assembly for a file
+DateTests.cpp.s:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/DateTests.cpp.s
+.PHONY : DateTests.cpp.s
+
+TodoListTests.obj: TodoListTests.cpp.obj
+.PHONY : TodoListTests.obj
+
+# target to build an object file
+TodoListTests.cpp.obj:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/TodoListTests.cpp.obj
+.PHONY : TodoListTests.cpp.obj
+
+TodoListTests.i: TodoListTests.cpp.i
+.PHONY : TodoListTests.i
+
+# target to preprocess a source file
+TodoListTests.cpp.i:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/TodoListTests.cpp.i
+.PHONY : TodoListTests.cpp.i
+
+TodoListTests.s: TodoListTests.cpp.s
+.PHONY : TodoListTests.s
+
+# target to generate assembly for a file
+TodoListTests.cpp.s:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/TodoListTests.cpp.s
+.PHONY : TodoListTests.cpp.s
 
 # Help Target
 help:
@@ -210,10 +286,18 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... basic_tests
-	@echo ... test_file.obj
-	@echo ... test_file.i
-	@echo ... test_file.s
+	@echo ... ActivityTest
+	@echo ... DateTest
+	@echo ... TodoListTest
+	@echo ... ActivityTests.obj
+	@echo ... ActivityTests.i
+	@echo ... ActivityTests.s
+	@echo ... DateTests.obj
+	@echo ... DateTests.i
+	@echo ... DateTests.s
+	@echo ... TodoListTests.obj
+	@echo ... TodoListTests.i
+	@echo ... TodoListTests.s
 .PHONY : help
 
 

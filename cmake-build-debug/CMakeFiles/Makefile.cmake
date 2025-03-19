@@ -82,7 +82,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TODOLIST.dir/DependInfo.cmake"
   "TODOLIST/CMakeFiles/TODOLIB.dir/DependInfo.cmake"
-  "tests/basic_tests/CMakeFiles/basic_tests.dir/DependInfo.cmake"
+  "tests/basic_tests/CMakeFiles/DateTest.dir/DependInfo.cmake"
+  "tests/basic_tests/CMakeFiles/ActivityTest.dir/DependInfo.cmake"
+  "tests/basic_tests/CMakeFiles/TodoListTest.dir/DependInfo.cmake"
   "tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "tests/lib/googletest-1.15.2/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

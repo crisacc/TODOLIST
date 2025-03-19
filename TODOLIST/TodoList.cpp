@@ -285,3 +285,11 @@ bool TodoList::writeToFile(const std::string& filename) const {
     return true;
 }
 
+int TodoList::getChangeCounter() const {
+    return changeCounter;
+}
+
+void TodoList::setChangeCounter(int changeCounter) {
+    TodoList::changeCounter = changeCounter;
+}
+
