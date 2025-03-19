@@ -10,21 +10,25 @@ using namespace std;
 
 void TodoList::addActivity(const Activity &activity) {
     activityList.push_back(activity);
+    markAsModified();
 }
 
 void TodoList::deleteActivity(int index) {
 
-    if(index>=0 && index<activityList.size())
+    if(index>=0 && index<activityList.size()) {
         activityList.erase(activityList.begin() + index);
-
+        markAsModified();
+    }
     else
         cerr << "Invalid index!" << endl;
 }
 
 void TodoList::changeActivityStatus(int index, bool done) {
 
-    if( index>=0 && index<activityList.size() )
+    if( index>=0 && index<activityList.size() ) {
         activityList[index].setDone(done);
+        markAsModified();
+    }
 
     else
         cerr << "Invalid index!" << endl;
@@ -32,11 +36,31 @@ void TodoList::changeActivityStatus(int index, bool done) {
 
 void TodoList::changeActivityDescription(int index, const string &newDescription) {
 
-    if( index>=0 && index<activityList.size() )
+    if( index>=0 && index<activityList.size() ){
         activityList[index].setDescription(newDescription);
+        markAsModified();
+    }
 
     else
         cerr << "Invalid index!" << endl;
+}
+
+void TodoList::markAsModified() {
+    modified = true;
+    changeCounter++;
+
+    if (changeCounter >= saveThreshold) {
+        saveChanges();
+    }
+}
+
+void TodoList::saveChanges() {
+    if (modified) {
+        writeToFile("todo_list.json");
+        modified = false;
+        changeCounter = 0;
+        cout << "Salvataggio automatico completato!" << endl;
+    }
 }
 
 void TodoList::sortByExpirationDate() {

@@ -12,11 +12,18 @@ class TodoList{
 
 private:
     vector<Activity> activityList;
+    bool modified=false;
+    const int saveThreshold=5;
+    int changeCounter;
 
 public:
 
     const std::vector<Activity>& getActivityList() const {
         return activityList;
+    }
+
+    ~TodoList() { // alla chiusura salva le modifiche
+        saveChanges();
     }
 
     void addActivity (const Activity& activity);
@@ -26,6 +33,10 @@ public:
     void changeActivityStatus(int index, bool done);
 
     void changeActivityDescription(int index, const string& newDescription);
+
+    void markAsModified();
+
+    void saveChanges();
 
     void sortByExpirationDate();
 
