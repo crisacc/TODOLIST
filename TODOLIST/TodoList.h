@@ -14,7 +14,7 @@ private:
     vector<Activity> activityList;
     bool modified=false;
     const int saveThreshold=5;
-    int changeCounter;
+    int changeCounter=0;
 public:
     int getChangeCounter() const;
 

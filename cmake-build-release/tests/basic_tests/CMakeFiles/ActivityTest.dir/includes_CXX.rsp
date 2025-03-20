@@ -1,0 +1,1 @@
+-I/include -IC:/Users/Cristiano/CLionProjects/TODOLIST/tests/basic_tests/../../TODOLIST/include -IC:/Users/Cristiano/CLionProjects/TODOLIST/TODOLIST -isystem "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest/include" -isystem "C:/Users/Cristiano/CLionProjects/TODOLIST/tests/lib/googletest-1.15.2/googletest"

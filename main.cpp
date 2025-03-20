@@ -1,7 +1,6 @@
-#include "TODOLIST/Activity.h"
-#include "TODOLIST/TodoList.h"
-#include "TODOLIST/Date.h"
+#include <iostream>
 
 int main() {
 
+    return 0;
 }

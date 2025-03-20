@@ -96,12 +96,14 @@ void TodoList::sortByState() {
 }
 
 void TodoList::sortByStateAndPriority(bool ascending) {
-    sort(activityList.begin(), activityList.end(),
-         [ascending] (const Activity &a, const Activity& b){
-          if (a.isDone() != b.isDone())
-              return a.isDone() < b.isDone();
-          return ascending ? a.getPriority() < b.getPriority() : a.getPriority() > b.getPriority();
-         }
+    std::sort(activityList.begin(), activityList.end(),
+              [ascending](const Activity &a, const Activity &b) {
+                  if (a.isDone() != b.isDone()) {
+                      return !a.isDone();  // Le attività non fatte vengono prima
+                  }
+                  return ascending ? (a.getPriority() > b.getPriority())
+                                   : (a.getPriority() < b.getPriority());
+              }
     );
 }
 

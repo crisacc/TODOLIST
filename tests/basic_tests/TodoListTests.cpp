@@ -92,8 +92,8 @@ TEST(TodoListTest, SortByState) {
     Activity doneActivity("Done Activity", Priority::Medium);
     doneActivity.setDone(true);
     Activity notDoneActivity("Not Done Activity", Priority::High);
-    todoList.addActivity(notDoneActivity);
     todoList.addActivity(doneActivity);
+    todoList.addActivity(notDoneActivity);
 
     todoList.sortByState();
     EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Not Done Activity");
@@ -103,20 +103,39 @@ TEST(TodoListTest, SortByState) {
 //test per ordinamento combinato stato e priorità
 TEST(TodoListTest, SortByStateAndPriority) {
     TodoList list;
-    Activity a1("Task A", Priority::Low);
-    Activity a2("Task B", Priority::High);
-    Activity a3("Task C", Priority::Medium);
-    a3.setDone(true);
 
-    list.addActivity(a1);
-    list.addActivity(a2);
-    list.addActivity(a3);
+    Activity A("A", Priority::Low);
+    A.setDone(true);
+    Activity B("B", Priority::High);
+    B.setDone(true);
+    Activity C("C", Priority::Medium);
+    Activity D("D", Priority::Low);
+    Activity E("E", Priority::High);
+
+    list.addActivity(A);
+    list.addActivity(B);
+    list.addActivity(C);
+    list.addActivity(D);
+    list.addActivity(E);
+
     list.sortByStateAndPriority(true);
 
-    EXPECT_EQ(list.getActivityList()[0].getDescription(), "Task B");
-    EXPECT_EQ(list.getActivityList()[1].getDescription(), "Task A");
-    EXPECT_EQ(list.getActivityList()[2].getDescription(), "Task C");
+    EXPECT_EQ(list.getActivityList()[0].getDescription(), "E");
+    EXPECT_EQ(list.getActivityList()[1].getDescription(), "C");
+    EXPECT_EQ(list.getActivityList()[2].getDescription(), "D");
+    EXPECT_EQ(list.getActivityList()[3].getDescription(), "B");
+    EXPECT_EQ(list.getActivityList()[4].getDescription(), "A");
+
+    list.sortByStateAndPriority(false);
+
+    EXPECT_EQ(list.getActivityList()[0].getDescription(), "D");
+    EXPECT_EQ(list.getActivityList()[1].getDescription(), "C");
+    EXPECT_EQ(list.getActivityList()[2].getDescription(), "E");
+    EXPECT_EQ(list.getActivityList()[3].getDescription(), "A");
+    EXPECT_EQ(list.getActivityList()[4].getDescription(), "B");
+
 }
+
 
 //test per non eliminare o modificare attività con indici non validi
 TEST(TodoListTest, InvalidIndexHandling) {
