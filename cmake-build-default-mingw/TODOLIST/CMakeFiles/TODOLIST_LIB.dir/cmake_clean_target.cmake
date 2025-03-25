@@ -1,3 +1,0 @@
-file(REMOVE_RECURSE
-  "libTODOLIST_LIB.a"
-)
