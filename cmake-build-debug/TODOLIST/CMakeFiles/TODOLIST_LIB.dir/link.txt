@@ -1,2 +1,0 @@
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe qc libTODOLIST_LIB.a CMakeFiles/TODOLIST_LIB.dir/Activity.cpp.obj CMakeFiles/TODOLIST_LIB.dir/Date.cpp.obj CMakeFiles/TODOLIST_LIB.dir/TodoList.cpp.obj
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ranlib.exe libTODOLIST_LIB.a

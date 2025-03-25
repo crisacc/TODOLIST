@@ -1,4 +1,0 @@
-C:\Users\Cristiano\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\Cristiano\CLionProjects\TODOLIST -B C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug
--- Configuring done (1.0s)
--- Generating done (0.4s)
--- Build files have been written to: C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-debug
