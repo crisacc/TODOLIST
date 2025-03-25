@@ -201,7 +201,7 @@ void TodoList::stampAll() {
 bool TodoList::readFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "File non trovato. Creazione di un nuovo file vuoto: "<< std::endl;
+        std::cerr << "File non trovato. Verrà creato un nuovo file al salvataggio." << std::endl;
         std::ofstream newFile(filename);
         if (!newFile.is_open()){
             std::cerr << "Errore nella creazione del file." << std::endl;
@@ -210,12 +210,24 @@ bool TodoList::readFromFile(const std::string& filename) {
         return true;
     }
 
+    // Controlla se il file è vuoto
+    if (file.peek() == std::ifstream::traits_type::eof()) {
+        // File vuoto: imposta la lista come vuota
+        activityList.clear();
+        return true;
+    }
+
     json j;
-    file >> j;
+    try {
+        file >> j;
+    } catch (json::parse_error& e) {
+        std::cerr << "Errore nel parsing del file JSON: " << e.what() << std::endl;
+        return false;
+    }
     file.close();
 
     try {
-        activityList.clear();  // Pulisce la lista esistente prima di caricare nuove attività
+        activityList.clear();
         for (const auto& item : j) {
             Activity activity;
             if (activity.fromJson(item)) {
@@ -229,6 +241,7 @@ bool TodoList::readFromFile(const std::string& filename) {
         return false;
     }
     return true;
+
 }
 
 bool TodoList::writeToFile(const std::string& filename) const {

@@ -62,27 +62,27 @@ CMAKE_BINARY_DIR = C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/TODOLIST.dir/all
-all: TODOLIST/all
+all: CMakeFiles/TODOLIST_main.dir/all
 all: tests/all
+all: TODOLIST/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: TODOLIST/preinstall
 preinstall: tests/preinstall
+preinstall: TODOLIST/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/TODOLIST.dir/clean
-clean: TODOLIST/clean
+clean: CMakeFiles/TODOLIST_main.dir/clean
 clean: tests/clean
+clean: TODOLIST/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory TODOLIST
 
 # Recursive "all" directory target.
-TODOLIST/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
+TODOLIST/all: TODOLIST/CMakeFiles/TODOLIST_LIB.dir/all
 .PHONY : TODOLIST/all
 
 # Recursive "preinstall" directory target.
@@ -90,7 +90,7 @@ TODOLIST/preinstall:
 .PHONY : TODOLIST/preinstall
 
 # Recursive "clean" directory target.
-TODOLIST/clean: TODOLIST/CMakeFiles/TODOLIB.dir/clean
+TODOLIST/clean: TODOLIST/CMakeFiles/TODOLIST_LIB.dir/clean
 .PHONY : TODOLIST/clean
 
 #=============================================================================
@@ -197,62 +197,35 @@ tests/lib/googletest-1.15.2/googletest/clean: tests/lib/googletest-1.15.2/google
 .PHONY : tests/lib/googletest-1.15.2/googletest/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/TODOLIST.dir
+# Target rules for target CMakeFiles/TODOLIST_main.dir
 
 # All Build rule for target.
-CMakeFiles/TODOLIST.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target TODOLIST"
-.PHONY : CMakeFiles/TODOLIST.dir/all
+CMakeFiles/TODOLIST_main.dir/all: TODOLIST/CMakeFiles/TODOLIST_LIB.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target TODOLIST_main"
+.PHONY : CMakeFiles/TODOLIST_main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TODOLIST.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TODOLIST.dir/all
+CMakeFiles/TODOLIST_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TODOLIST_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/TODOLIST.dir/rule
+.PHONY : CMakeFiles/TODOLIST_main.dir/rule
 
 # Convenience name for target.
-TODOLIST: CMakeFiles/TODOLIST.dir/rule
-.PHONY : TODOLIST
+TODOLIST_main: CMakeFiles/TODOLIST_main.dir/rule
+.PHONY : TODOLIST_main
 
 # clean rule for target.
-CMakeFiles/TODOLIST.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/clean
-.PHONY : CMakeFiles/TODOLIST.dir/clean
-
-#=============================================================================
-# Target rules for target TODOLIST/CMakeFiles/TODOLIB.dir
-
-# All Build rule for target.
-TODOLIST/CMakeFiles/TODOLIB.dir/all:
-	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/depend
-	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=5,6,7,8 "Built target TODOLIB"
-.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/all
-
-# Build rule for subdir invocation for target.
-TODOLIST/CMakeFiles/TODOLIB.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIB.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
-.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/rule
-
-# Convenience name for target.
-TODOLIB: TODOLIST/CMakeFiles/TODOLIB.dir/rule
-.PHONY : TODOLIB
-
-# clean rule for target.
-TODOLIST/CMakeFiles/TODOLIB.dir/clean:
-	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/clean
-.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/clean
+CMakeFiles/TODOLIST_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/clean
+.PHONY : CMakeFiles/TODOLIST_main.dir/clean
 
 #=============================================================================
 # Target rules for target tests/basic_tests/CMakeFiles/DateTest.dir
 
 # All Build rule for target.
-tests/basic_tests/CMakeFiles/DateTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
 tests/basic_tests/CMakeFiles/DateTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
 tests/basic_tests/CMakeFiles/DateTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\DateTest.dir\build.make tests/basic_tests/CMakeFiles/DateTest.dir/depend
@@ -262,7 +235,7 @@ tests/basic_tests/CMakeFiles/DateTest.dir/all: tests/lib/googletest-1.15.2/googl
 
 # Build rule for subdir invocation for target.
 tests/basic_tests/CMakeFiles/DateTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/DateTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
 .PHONY : tests/basic_tests/CMakeFiles/DateTest.dir/rule
@@ -280,7 +253,6 @@ tests/basic_tests/CMakeFiles/DateTest.dir/clean:
 # Target rules for target tests/basic_tests/CMakeFiles/ActivityTest.dir
 
 # All Build rule for target.
-tests/basic_tests/CMakeFiles/ActivityTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
 tests/basic_tests/CMakeFiles/ActivityTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
 tests/basic_tests/CMakeFiles/ActivityTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\ActivityTest.dir\build.make tests/basic_tests/CMakeFiles/ActivityTest.dir/depend
@@ -290,7 +262,7 @@ tests/basic_tests/CMakeFiles/ActivityTest.dir/all: tests/lib/googletest-1.15.2/g
 
 # Build rule for subdir invocation for target.
 tests/basic_tests/CMakeFiles/ActivityTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/ActivityTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
 .PHONY : tests/basic_tests/CMakeFiles/ActivityTest.dir/rule
@@ -308,7 +280,6 @@ tests/basic_tests/CMakeFiles/ActivityTest.dir/clean:
 # Target rules for target tests/basic_tests/CMakeFiles/TodoListTest.dir
 
 # All Build rule for target.
-tests/basic_tests/CMakeFiles/TodoListTest.dir/all: TODOLIST/CMakeFiles/TODOLIB.dir/all
 tests/basic_tests/CMakeFiles/TodoListTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/all
 tests/basic_tests/CMakeFiles/TodoListTest.dir/all: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\basic_tests\CMakeFiles\TodoListTest.dir\build.make tests/basic_tests/CMakeFiles/TodoListTest.dir/depend
@@ -318,7 +289,7 @@ tests/basic_tests/CMakeFiles/TodoListTest.dir/all: tests/lib/googletest-1.15.2/g
 
 # Build rule for subdir invocation for target.
 tests/basic_tests/CMakeFiles/TodoListTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/basic_tests/CMakeFiles/TodoListTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
 .PHONY : tests/basic_tests/CMakeFiles/TodoListTest.dir/rule
@@ -436,6 +407,32 @@ gtest_main: tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/rul
 tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean
 .PHONY : tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/clean
+
+#=============================================================================
+# Target rules for target TODOLIST/CMakeFiles/TODOLIST_LIB.dir
+
+# All Build rule for target.
+TODOLIST/CMakeFiles/TODOLIST_LIB.dir/all:
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/depend
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles --progress-num=5,6,7,8 "Built target TODOLIST_LIB"
+.PHONY : TODOLIST/CMakeFiles/TODOLIST_LIB.dir/all
+
+# Build rule for subdir invocation for target.
+TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIST_LIB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-debug\CMakeFiles 0
+.PHONY : TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule
+
+# Convenience name for target.
+TODOLIST_LIB: TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule
+.PHONY : TODOLIST_LIB
+
+# clean rule for target.
+TODOLIST/CMakeFiles/TODOLIST_LIB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/clean
+.PHONY : TODOLIST/CMakeFiles/TODOLIST_LIB.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

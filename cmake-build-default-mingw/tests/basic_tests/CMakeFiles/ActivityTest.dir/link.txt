@@ -1,0 +1,3 @@
+C:\Users\Cristiano\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\ActivityTest.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe qc CMakeFiles\ActivityTest.dir/objects.a @CMakeFiles\ActivityTest.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE -Wl,--whole-archive CMakeFiles\ActivityTest.dir/objects.a -Wl,--no-whole-archive -o ActivityTest.exe -Wl,--out-implib,libActivityTest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ActivityTest.dir\linkLibs.rsp

@@ -94,7 +94,6 @@ tests/basic_tests/DateTest.exe: tests/basic_tests/CMakeFiles/DateTest.dir/DateTe
 tests/basic_tests/DateTest.exe: tests/basic_tests/CMakeFiles/DateTest.dir/build.make
 tests/basic_tests/DateTest.exe: lib/libgtest.a
 tests/basic_tests/DateTest.exe: lib/libgtest_main.a
-tests/basic_tests/DateTest.exe: TODOLIST/libTODOLIB.a
 tests/basic_tests/DateTest.exe: lib/libgtest.a
 tests/basic_tests/DateTest.exe: tests/basic_tests/CMakeFiles/DateTest.dir/linkLibs.rsp
 tests/basic_tests/DateTest.exe: tests/basic_tests/CMakeFiles/DateTest.dir/objects1.rsp

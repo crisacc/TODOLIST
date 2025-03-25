@@ -94,7 +94,6 @@ tests/basic_tests/ActivityTest.exe: tests/basic_tests/CMakeFiles/ActivityTest.di
 tests/basic_tests/ActivityTest.exe: tests/basic_tests/CMakeFiles/ActivityTest.dir/build.make
 tests/basic_tests/ActivityTest.exe: lib/libgtest.a
 tests/basic_tests/ActivityTest.exe: lib/libgtest_main.a
-tests/basic_tests/ActivityTest.exe: TODOLIST/libTODOLIB.a
 tests/basic_tests/ActivityTest.exe: lib/libgtest.a
 tests/basic_tests/ActivityTest.exe: tests/basic_tests/CMakeFiles/ActivityTest.dir/linkLibs.rsp
 tests/basic_tests/ActivityTest.exe: tests/basic_tests/CMakeFiles/ActivityTest.dir/objects1.rsp

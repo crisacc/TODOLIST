@@ -161,30 +161,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TODOLIST
+# Target rules for targets named TODOLIST_main
 
 # Build rule for target.
-TODOLIST: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST
-.PHONY : TODOLIST
+TODOLIST_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST_main
+.PHONY : TODOLIST_main
 
 # fast build rule for target.
-TODOLIST/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/build
-.PHONY : TODOLIST/fast
-
-#=============================================================================
-# Target rules for targets named TODOLIB
-
-# Build rule for target.
-TODOLIB: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIB
-.PHONY : TODOLIB
-
-# fast build rule for target.
-TODOLIB/fast:
-	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/build
-.PHONY : TODOLIB/fast
+TODOLIST_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/build
+.PHONY : TODOLIST_main/fast
 
 #=============================================================================
 # Target rules for targets named DateTest
@@ -277,12 +264,25 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f tests\lib\googletest-1.15.2\googletest\CMakeFiles\gtest_main.dir\build.make tests/lib/googletest-1.15.2/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+#=============================================================================
+# Target rules for targets named TODOLIST_LIB
+
+# Build rule for target.
+TODOLIST_LIB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST_LIB
+.PHONY : TODOLIST_LIB
+
+# fast build rule for target.
+TODOLIST_LIB/fast:
+	$(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/build
+.PHONY : TODOLIST_LIB/fast
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -290,7 +290,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -298,7 +298,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST.dir\build.make CMakeFiles/TODOLIST.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TODOLIST_main.dir\build.make CMakeFiles/TODOLIST_main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -315,8 +315,8 @@ help:
 	@echo ... rebuild_cache
 	@echo ... ActivityTest
 	@echo ... DateTest
-	@echo ... TODOLIB
-	@echo ... TODOLIST
+	@echo ... TODOLIST_LIB
+	@echo ... TODOLIST_main
 	@echo ... TodoListTest
 	@echo ... gmock
 	@echo ... gmock_main

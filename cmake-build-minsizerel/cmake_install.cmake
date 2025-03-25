@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-minsizerel/TODOLIST/cmake_install.cmake")
+  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-minsizerel/tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-minsizerel/tests/cmake_install.cmake")
+  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-minsizerel/TODOLIST/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

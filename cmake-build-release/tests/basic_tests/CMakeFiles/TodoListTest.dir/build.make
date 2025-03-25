@@ -94,7 +94,6 @@ tests/basic_tests/TodoListTest.exe: tests/basic_tests/CMakeFiles/TodoListTest.di
 tests/basic_tests/TodoListTest.exe: tests/basic_tests/CMakeFiles/TodoListTest.dir/build.make
 tests/basic_tests/TodoListTest.exe: lib/libgtest.a
 tests/basic_tests/TodoListTest.exe: lib/libgtest_main.a
-tests/basic_tests/TodoListTest.exe: TODOLIST/libTODOLIB.a
 tests/basic_tests/TodoListTest.exe: lib/libgtest.a
 tests/basic_tests/TodoListTest.exe: tests/basic_tests/CMakeFiles/TodoListTest.dir/linkLibs.rsp
 tests/basic_tests/TodoListTest.exe: tests/basic_tests/CMakeFiles/TodoListTest.dir/objects1.rsp

@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-relwithdebinfo/TODOLIST/cmake_install.cmake")
+  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-relwithdebinfo/tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-relwithdebinfo/tests/cmake_install.cmake")
+  include("C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-relwithdebinfo/TODOLIST/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

@@ -1,0 +1,4 @@
+C:\Users\Cristiano\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -G "MinGW Makefiles" -S C:\Users\Cristiano\CLionProjects\TODOLIST -B C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-default-mingw
+-- Configuring done (1.3s)
+-- Generating done (0.5s)
+-- Build files have been written to: C:/Users/Cristiano/CLionProjects/TODOLIST/cmake-build-default-mingw

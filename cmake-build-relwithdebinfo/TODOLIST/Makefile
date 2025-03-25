@@ -161,25 +161,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-TODOLIST/CMakeFiles/TODOLIB.dir/rule:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIB.dir/rule
-.PHONY : TODOLIST/CMakeFiles/TODOLIB.dir/rule
+TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule
+.PHONY : TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule
 
 # Convenience name for target.
-TODOLIB: TODOLIST/CMakeFiles/TODOLIB.dir/rule
-.PHONY : TODOLIB
+TODOLIST_LIB: TODOLIST/CMakeFiles/TODOLIST_LIB.dir/rule
+.PHONY : TODOLIST_LIB
 
 # fast build rule for target.
-TODOLIB/fast:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/build
-.PHONY : TODOLIB/fast
+TODOLIST_LIB/fast:
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/build
+.PHONY : TODOLIST_LIB/fast
 
 Activity.obj: Activity.cpp.obj
 .PHONY : Activity.obj
 
 # target to build an object file
 Activity.cpp.obj:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Activity.cpp.obj
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Activity.cpp.obj
 .PHONY : Activity.cpp.obj
 
 Activity.i: Activity.cpp.i
@@ -187,7 +187,7 @@ Activity.i: Activity.cpp.i
 
 # target to preprocess a source file
 Activity.cpp.i:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Activity.cpp.i
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Activity.cpp.i
 .PHONY : Activity.cpp.i
 
 Activity.s: Activity.cpp.s
@@ -195,7 +195,7 @@ Activity.s: Activity.cpp.s
 
 # target to generate assembly for a file
 Activity.cpp.s:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Activity.cpp.s
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Activity.cpp.s
 .PHONY : Activity.cpp.s
 
 Date.obj: Date.cpp.obj
@@ -203,7 +203,7 @@ Date.obj: Date.cpp.obj
 
 # target to build an object file
 Date.cpp.obj:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.obj
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Date.cpp.obj
 .PHONY : Date.cpp.obj
 
 Date.i: Date.cpp.i
@@ -211,7 +211,7 @@ Date.i: Date.cpp.i
 
 # target to preprocess a source file
 Date.cpp.i:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.i
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Date.cpp.i
 .PHONY : Date.cpp.i
 
 Date.s: Date.cpp.s
@@ -219,7 +219,7 @@ Date.s: Date.cpp.s
 
 # target to generate assembly for a file
 Date.cpp.s:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/Date.cpp.s
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/Date.cpp.s
 .PHONY : Date.cpp.s
 
 TodoList.obj: TodoList.cpp.obj
@@ -227,7 +227,7 @@ TodoList.obj: TodoList.cpp.obj
 
 # target to build an object file
 TodoList.cpp.obj:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/TodoList.cpp.obj
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/TodoList.cpp.obj
 .PHONY : TodoList.cpp.obj
 
 TodoList.i: TodoList.cpp.i
@@ -235,7 +235,7 @@ TodoList.i: TodoList.cpp.i
 
 # target to preprocess a source file
 TodoList.cpp.i:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/TodoList.cpp.i
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/TodoList.cpp.i
 .PHONY : TodoList.cpp.i
 
 TodoList.s: TodoList.cpp.s
@@ -243,7 +243,7 @@ TodoList.s: TodoList.cpp.s
 
 # target to generate assembly for a file
 TodoList.cpp.s:
-	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIB.dir\build.make TODOLIST/CMakeFiles/TODOLIB.dir/TodoList.cpp.s
+	cd /d C:\Users\Cristiano\CLionProjects\TODOLIST\cmake-build-relwithdebinfo && $(MAKE) $(MAKESILENT) -f TODOLIST\CMakeFiles\TODOLIST_LIB.dir\build.make TODOLIST/CMakeFiles/TODOLIST_LIB.dir/TodoList.cpp.s
 .PHONY : TodoList.cpp.s
 
 # Help Target
@@ -258,7 +258,7 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... TODOLIB
+	@echo ... TODOLIST_LIB
 	@echo ... Activity.obj
 	@echo ... Activity.i
 	@echo ... Activity.s

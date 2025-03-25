@@ -1,9 +1,12 @@
-add_library(TODOLIB
+# Imposta i file sorgente per la libreria
+set(SOURCES
         Activity.cpp
-        TodoList.cpp
         Date.cpp
+        TodoList.cpp
 )
 
-include_directories(include)
+# Crea la libreria (può essere statica o condivisa)
+add_library(TODOLIST_LIB ${SOURCES})
 
-target_include_directories(TODOLIB PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# Specifica la directory degli header (incluso json.hpp)
+target_include_directories(TODOLIST_LIB PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
