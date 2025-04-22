@@ -16,15 +16,17 @@ private:
     const int saveThreshold=5;
     int changeCounter=0;
 public:
+
     int getChangeCounter() const;
 
-    void setChangeCounter(int changeCounter);
-
-public:
-
-    const std::vector<Activity>& getActivityList() const {
+    const std::vector<Activity>& getActivityList() const{
         return activityList;
     }
+
+    std::vector<Activity>& getActivityList()  {  //per la modifica
+        return activityList;
+    }
+
 
     ~TodoList() { // alla chiusura salva le modifiche
         saveChanges();
@@ -32,13 +34,13 @@ public:
 
     void addActivity (const Activity& activity);
 
-    void deleteActivity(int index);
+    void deleteActivity(int index);//todo: gfare controllo outofrange
 
-    void changeActivityStatus(int index, bool done);
+    void changeActivityStatus(int index, bool done); //todo: usare overloading per una sola
 
     void changeActivityDescription(int index, const string& newDescription);
 
-    void markAsModified();
+    void markAsModified(); //todo: devono essere privati, anche savechanges
 
     void saveChanges();
 
@@ -52,13 +54,7 @@ public:
 
     void sortByStateAndExpirationDate();
 
-    vector<pair<int, Activity*>> searchByDescription (const string& keyword);
-
-    void stampVector(const vector<pair<int , Activity*>> &results)const;
-
-    void manageSearchResults(const string& keyword);
-
-    void stampAll();
+    const vector<pair<int, Activity*>> searchByDescription (const string& keyword);
 
     bool readFromFile(const std::string& filename);
 

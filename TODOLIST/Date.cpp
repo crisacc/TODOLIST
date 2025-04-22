@@ -12,7 +12,7 @@ Date::Date(int day, int month, int year) {
         this->day = 1;
         this->month = 1;
         this->year = 1970;
-    }
+    } //TODO  LANCIA UN INTERRUZIONE E TESTARE LANCIO
 }
 
 bool Date::isLeapYear(int year) {

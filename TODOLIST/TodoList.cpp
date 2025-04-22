@@ -52,7 +52,7 @@ void TodoList::markAsModified() {
     if (changeCounter >= saveThreshold) {
         saveChanges();
     }
-}
+} //todo: rimuovere modified
 
 void TodoList::saveChanges() {
     if (modified) {
@@ -120,7 +120,7 @@ void TodoList::sortByStateAndExpirationDate() {
     );
 }
 
-vector<pair<int,Activity*>> TodoList::searchByDescription(const std::string &keyword) {
+const vector<pair<int,Activity*>> TodoList::searchByDescription(const std::string &keyword) {
     vector<pair<int,Activity*>> results;
     for (int i = 0; i < activityList.size(); i++) {
         if (activityList[i].getDescription().find(keyword) != string::npos) {
@@ -129,8 +129,8 @@ vector<pair<int,Activity*>> TodoList::searchByDescription(const std::string &key
     }
     return results;
 }
-
-void TodoList::stampVector(const vector<pair<int , Activity*>> &results) const {
+/*
+void TodoList::printVector(const vector<pair<int , Activity*>> &results) const {
     if (results.empty()){
         cout << "Nessuna attività trovata.\n";
         return;
@@ -144,7 +144,7 @@ void TodoList::stampVector(const vector<pair<int , Activity*>> &results) const {
 
 void TodoList::manageSearchResults(const string& keyword) {
     vector<pair<int, Activity*>> results = searchByDescription(keyword);
-    stampVector(results);
+    printVector(results);
 
     if (results.empty()) return;
 
@@ -181,7 +181,7 @@ void TodoList::manageSearchResults(const string& keyword) {
     }
 }
 
-void TodoList::stampAll() {
+void TodoList::printAll() {
 
     if (activityList.empty()) {
         cout << "La lista delle attività è vuota." << endl;
@@ -197,7 +197,7 @@ void TodoList::stampAll() {
     cout << "-----------------------------\n";
 
 }
-
+*/
 bool TodoList::readFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
@@ -302,9 +302,5 @@ bool TodoList::writeToFile(const std::string& filename) const {
 
 int TodoList::getChangeCounter() const {
     return changeCounter;
-}
-
-void TodoList::setChangeCounter(int changeCounter) {
-    TodoList::changeCounter = changeCounter;
 }
 

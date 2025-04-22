@@ -13,7 +13,7 @@ private:
     int month;
     int year;
 
-    static bool isLeapYear(int year) ;
+    static bool isLeapYear(int year);
     static bool isValidDate(int day, int month, int year) ;
 
 public:

@@ -113,7 +113,7 @@ bool Activity::fromJson(const json& j) {
     }
 }
 
-
+/*
 void saveActivityToFile(const Activity& activity, const std::string& filename) {
     // Converte l'oggetto Activity in JSON
     json j = activity.toJson();
@@ -148,3 +148,4 @@ Activity loadActivityFromFile(const std::string& filename) {
 
     return activity;
 }
+*/

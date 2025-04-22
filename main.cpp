@@ -60,6 +60,79 @@ void addActivityCLI(TodoList &list) {
         }
 }
 
+void printVector(const vector<pair<int , Activity*>> &results) {
+    if (results.empty()) {
+        cout << "Nessuna attività trovata.\n";
+        return;
+    }
+    cout << "Attività trovate :\n";
+    for (const auto& [index, activity] : results) {
+        cout << index << ". ";
+        activity->stampActivity();
+    }
+}
+
+void manageSearchResults(TodoList& todo, const string& keyword) {
+    vector<pair<int, Activity*>> results = todo.searchByDescription(keyword);
+    printVector(results);
+
+    if (results.empty()) return;
+
+    cout << "Inserisci l'indice originale dell'attività da gestire (negativo per uscire): ";
+    int index;
+    cin >> index;
+
+    vector<Activity>& activityList = todo.getActivityList();
+
+    if (index < 0 || index >= static_cast<int>(activityList.size())) {
+        cout << "Indice non valido.\n";
+        return;
+    }
+
+    cout << "Cosa vuoi fare? (1 = Modifica descrizione, 2 = Cambia stato, 3 = Cancella): ";
+    int action;
+    cin >> action;
+
+    if (action == 1) {
+        cout << "Nuova descrizione: ";
+        string newDesc;
+        cin.ignore();
+        getline(cin, newDesc);
+        activityList[index].setDescription(newDesc);
+    }
+    else if (action == 2) {
+        activityList[index].setDone(!activityList[index].isDone());
+        cout << "Stato aggiornato.\n";
+    }
+    else if (action == 3) {
+        activityList.erase(activityList.begin() + index);
+        cout << "Attività eliminata.\n";
+    }
+    else {
+        cout << "Azione non valida.\n";
+    }
+}
+
+void printAll(const TodoList& todo) {
+    const auto& activityList = todo.getActivityList();
+
+    if (activityList.empty()) {
+        cout << "La lista delle attività è vuota." << endl;
+        return;
+    }
+
+    cout << "Elenco delle attività:\n";
+    for (int i = 0; i < static_cast<int>(activityList.size()); ++i) {
+        cout << "-----------------------------\n";
+        cout << i + 1 << ".";
+        activityList[i].stampActivity();
+    }
+    cout << "-----------------------------\n";
+}
+
+
+
+
 int main() {
     TodoList todoList;
 
@@ -74,7 +147,7 @@ int main() {
     do {
         printMenu();
 
-        cin >>choice;
+        cin >> choice;
         cin.ignore();  // Pulizia del buffer
 
         switch (choice) {
@@ -85,7 +158,7 @@ int main() {
             case 2: { // Elimina attività
                 int index;
                 cout << "Inserisci l'indice dell'attività da eliminare: ";
-                cin >>index;
+                cin >> index;
                 cin.ignore();
                 todoList.deleteActivity(index);
                 break;
@@ -94,19 +167,18 @@ int main() {
                 int index;
                 int newState;
                 cout << "Inserisci l'indice dell'attività: ";
-                cin >>index;
+                cin >> index;
                 cout << "Inserisci il nuovo stato (0: Incompleta, 1: Completata): ";
-                cin >>newState;
+                cin >> newState;
                 cin.ignore();
-                todoList.
-                changeActivityStatus(index, newState);
+                todoList.changeActivityStatus(index, newState);
                 break;
             }
             case 4: { // Modifica descrizione attività
                 int index;
                 string newDesc;
                 cout << "Inserisci l'indice dell'attività: ";
-                cin >>index;
+                cin >> index;
                 cin.ignore();
 
                 cout << "Inserisci la nuova descrizione: ";
@@ -115,69 +187,55 @@ int main() {
                 break;
             }
             case 5: { // Visualizza tutte le attività
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 6: { // Ordina per data di scadenza
                 todoList.sortByExpirationDate();
-
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 7: { // Ordina per priorità
-                // Per default, il sortByPriority assume ordine crescente; puoi modificare il parametro se necessario
                 todoList.sortByPriority(true);
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 8: { // Ordina per stato
                 todoList.sortByState();
-
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 9: { // Ordina per stato e priorità
                 todoList.sortByStateAndPriority(true);
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 10: { // Ordina per stato e data di scadenza
                 todoList.sortByStateAndExpirationDate();
-
-                todoList.stampAll();
-
+                printAll(todoList);
                 break;
             }
             case 11: { // Ricerca per descrizione e gestione risultati
                 string keyword;
                 cout << "Inserisci il termine da cercare: ";
                 getline(cin, keyword);
-                todoList.manageSearchResults(keyword);
+                manageSearchResults(todoList, keyword);
                 break;
             }
             case 0: { // Uscita: salvataggio finale
-                cout << "Salvataggio finale in corso..." <<
-                endl;
+                cout << "Salvataggio finale in corso..." << endl;
                 if (todoList.writeToFile("todolist.json")) {
-                    cout << "File salvato con successo." <<
-                         endl;
+                    cout << "File salvato con successo." << endl;
                 } else {
-                    cout << "Errore nel salvataggio finale." <<
-                    endl;
+                    cout << "Errore nel salvataggio finale." << endl;
                 }
                 break;
             }
             default:
-                cout << "Scelta non valida! Riprova." <<
-                endl;
+                cout << "Scelta non valida! Riprova." << endl;
         }
-    }
-    while(choice != 0);
+    } while (choice != 0);
 
-    return 0; // Alla fine, l'oggetto todoList viene distrutto, invocando il distruttore che salva automaticamente (se non è già stato fatto)
+    return 0;
 }
+

@@ -26,7 +26,7 @@ TEST(TodoListTest, DeleteActivity) {
     todoList.addActivity(Activity("Activity 2", Priority::High));
 
     todoList.deleteActivity(1);  // Elimina "Activity 2"
-    ASSERT_EQ(todoList.getActivityList().size(), 1);
+    ASSERT_EQ(todoList.getActivityList().size(), 1);//todo: interfaccia  a livello todolist
     EXPECT_EQ(todoList.getActivityList()[0].getDescription(), "Activity 1");
 
     int sizeBefore = todoList.getActivityList().size();
