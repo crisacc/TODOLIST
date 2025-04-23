@@ -14,6 +14,9 @@ private:
     vector<Activity> activityList;
     const int saveThreshold=5;
     int changeCounter=0;
+    void markAsModified();
+    void saveChanges();
+
 public:
 
     int getChangeCounter() const;
@@ -38,10 +41,6 @@ public:
     void changeActivityStatus(int index, bool done); //todo: usare overloading per una sola
 
     void changeActivityDescription(int index, const string& newDescription);
-
-    void markAsModified(); //todo: devono essere privati, anche savechanges
-
-    void saveChanges();
 
     void sortByExpirationDate();
 
