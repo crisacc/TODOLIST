@@ -51,7 +51,7 @@ void TodoList::markAsModified() {
     if (changeCounter >= saveThreshold) {
         saveChanges();
     }
-} //todo: rimuovere modified
+}
 
 void TodoList::saveChanges() {
     writeToFile("todo_list.json");
@@ -232,3 +232,13 @@ int TodoList::getChangeCounter() const {
     return changeCounter;
 }
 
+int TodoList::getSize() const {
+    return activityList.size();
+}
+
+const Activity& TodoList::getActivityAt(int index) const {
+    if (index < 0 || index >= activityList.size()) {
+        throw std::out_of_range("Indice non valido");
+    }
+    return activityList[index];
+}

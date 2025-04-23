@@ -21,6 +21,10 @@ public:
 
     int getChangeCounter() const;
 
+    int getSize() const;
+
+    const Activity& getActivityAt(int index) const;
+
     const std::vector<Activity>& getActivityList() const{
         return activityList;
     }
@@ -36,7 +40,7 @@ public:
 
     void addActivity (const Activity& activity);
 
-    void deleteActivity(int index);//todo: gfare controllo outofrange
+    void deleteActivity(int index);
 
     void changeActivityStatus(int index, bool done); //todo: usare overloading per una sola
 
