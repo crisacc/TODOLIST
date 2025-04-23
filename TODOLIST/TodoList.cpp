@@ -46,7 +46,6 @@ void TodoList::changeActivityDescription(int index, const string &newDescription
 }
 
 void TodoList::markAsModified() {
-    modified = true;
     changeCounter++;
 
     if (changeCounter >= saveThreshold) {
@@ -55,12 +54,9 @@ void TodoList::markAsModified() {
 } //todo: rimuovere modified
 
 void TodoList::saveChanges() {
-    if (modified) {
-        writeToFile("todo_list.json");
-        modified = false;
-        changeCounter = 0;
-        cout << "Salvataggio automatico completato!" << endl;
-    }
+    writeToFile("todo_list.json");
+    changeCounter = 0;
+    cout << "Salvataggio automatico completato!" << endl;
 }
 
 void TodoList::sortByExpirationDate() {
@@ -129,75 +125,7 @@ const vector<pair<int,Activity*>> TodoList::searchByDescription(const std::strin
     }
     return results;
 }
-/*
-void TodoList::printVector(const vector<pair<int , Activity*>> &results) const {
-    if (results.empty()){
-        cout << "Nessuna attività trovata.\n";
-        return;
-    }
-    cout << "Attività trovate :\n";
-    for (const auto& [index, activity] : results){
-        cout << index << ". ";
-        activity->stampActivity();
-    }
-}
 
-void TodoList::manageSearchResults(const string& keyword) {
-    vector<pair<int, Activity*>> results = searchByDescription(keyword);
-    printVector(results);
-
-    if (results.empty()) return;
-
-    cout << "Inserisci l'indice originale dell'attività da gestire (negativo per uscire): ";
-    int index;
-    cin >> index;
-
-    if (index < 0 || index >= activityList.size()) {
-        cout << "Indice non valido.\n";
-        return;
-    }
-
-    cout << "Cosa vuoi fare? (1 = Modifica descrizione, 2 = Cambia stato, 3 = Cancella): ";
-    int action;
-    cin >> action;
-
-    if (action == 1) {
-        cout << "Nuova descrizione: ";
-        string newDesc;
-        cin.ignore();
-        getline(cin, newDesc);
-        activityList[index].setDescription(newDesc);
-    }
-    else if (action == 2) {
-        activityList[index].setDone(!activityList[index].isDone());
-        cout << "Stato aggiornato.\n";
-    }
-    else if (action == 3) {
-        activityList.erase(activityList.begin() + index);
-        cout << "Attività eliminata.\n";
-    }
-    else {
-        cout << "Azione non valida.\n";
-    }
-}
-
-void TodoList::printAll() {
-
-    if (activityList.empty()) {
-        cout << "La lista delle attività è vuota." << endl;
-        return;
-    }
-
-    cout << "Elenco delle attività:\n";
-    for (int i = 0; i < activityList.size(); ++i) {
-        cout << "-----------------------------\n";
-        cout << i+1 << ".";
-        activityList[i].stampActivity();
-    }
-    cout << "-----------------------------\n";
-
-}
-*/
 bool TodoList::readFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
