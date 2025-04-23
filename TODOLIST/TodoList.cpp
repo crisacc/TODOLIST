@@ -23,7 +23,7 @@ void TodoList::deleteActivity(int index) {
         cerr << "Invalid index!" << endl;
 }
 
-void TodoList::changeActivityStatus(int index, bool done) {
+void TodoList::modifyActivity(int index, bool done) {
 
     if( index>=0 && index<activityList.size() ) {
         activityList[index].setDone(done);
@@ -34,7 +34,7 @@ void TodoList::changeActivityStatus(int index, bool done) {
         cerr << "Invalid index!" << endl;
 }
 
-void TodoList::changeActivityDescription(int index, const string &newDescription) {
+void TodoList::modifyActivity(int index, const string &newDescription) {
 
     if( index>=0 && index<activityList.size() ){
         activityList[index].setDescription(newDescription);

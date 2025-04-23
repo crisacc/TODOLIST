@@ -42,9 +42,9 @@ public:
 
     void deleteActivity(int index);
 
-    void changeActivityStatus(int index, bool done); //todo: usare overloading per una sola
+    void modifyActivity(int index, bool done);
 
-    void changeActivityDescription(int index, const string& newDescription);
+    void modifyActivity(int index, const string& newDescription);
 
     void sortByExpirationDate();
 

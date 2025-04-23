@@ -36,12 +36,12 @@ TEST(TodoListTest, DeleteActivity) {
 TEST(TodoListTest, ChangeActivityStatus) {
     TodoList todoList;
     todoList.addActivity(Activity("Activity 1", Priority::Low));
-    todoList.changeActivityStatus(0, true);
+    todoList.modifyActivity(0, true);
     EXPECT_TRUE(todoList.getActivityAt(0).isDone());
 
     // Indice non valido, lo stato non deve cambiare
     bool doneBefore = todoList.getActivityAt(0).isDone();
-    todoList.changeActivityStatus(10, false);
+    todoList.modifyActivity(10, false);
     EXPECT_EQ(todoList.getActivityAt(0).isDone(), doneBefore);
 }
 
@@ -49,12 +49,12 @@ TEST(TodoListTest, ChangeActivityStatus) {
 TEST(TodoListTest, ChangeActivityDescription) {
     TodoList todoList;
     todoList.addActivity(Activity("Activity 1", Priority::Low));
-    todoList.changeActivityDescription(0, "Updated Description");
+    todoList.modifyActivity(0, "Updated Description");
     EXPECT_EQ(todoList.getActivityAt(0).getDescription(), "Updated Description");
 
     // Indice non valido, la descrizione non deve cambiare
     std::string descriptionBefore = todoList.getActivityAt(0).getDescription();
-    todoList.changeActivityDescription(10, "Another Description");
+    todoList.modifyActivity(10, "Another Description");
     EXPECT_EQ(todoList.getActivityAt(0).getDescription(), descriptionBefore);
 }
 
@@ -145,11 +145,11 @@ TEST(TodoListTest, InvalidIndexHandling) {
     EXPECT_EQ(list.getSize(), 1);
 
     // Tentativo di cambiare stato di un'attività inesistente
-    list.changeActivityStatus(10, true);
+    list.modifyActivity(10, true);
     EXPECT_FALSE(list.getActivityAt(0).isDone());
 
     // Tentativo di cambiare descrizione con un indice non valido
-    list.changeActivityDescription(-1, "Nuova descrizione");
+    list.modifyActivity(-1, "Nuova descrizione");
     EXPECT_EQ(list.getActivityAt(0).getDescription(), "Task A");
 }
 

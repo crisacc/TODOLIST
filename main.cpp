@@ -171,7 +171,7 @@ int main() {
                 cout << "Inserisci il nuovo stato (0: Incompleta, 1: Completata): ";
                 cin >> newState;
                 cin.ignore();
-                todoList.changeActivityStatus(index, newState);
+                todoList.modifyActivity(index, newState);
                 break;
             }
             case 4: { // Modifica descrizione attività
@@ -183,7 +183,7 @@ int main() {
 
                 cout << "Inserisci la nuova descrizione: ";
                 getline(cin, newDesc);
-                todoList.changeActivityDescription(index, newDesc);
+                todoList.modifyActivity(index, newDesc);
                 break;
             }
             case 5: { // Visualizza tutte le attività
