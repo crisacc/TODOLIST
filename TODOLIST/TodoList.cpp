@@ -54,7 +54,7 @@ void TodoList::markAsModified() {
 }
 
 void TodoList::saveChanges() {
-    writeToFile("todo_list.json");
+    writeToFile(name+".json");
     changeCounter = 0;
     cout << "Salvataggio automatico completato!" << endl;
 }

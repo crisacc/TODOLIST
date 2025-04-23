@@ -11,6 +11,7 @@
 class TodoList{
 
 private:
+    string name;
     vector<Activity> activityList;
     const int saveThreshold=5;
     int changeCounter=0;
@@ -18,6 +19,14 @@ private:
     void saveChanges();
 
 public:
+
+    void setName(const std::string& newName) {
+        name = newName;
+    }
+
+    const string& getName() const {
+        return name;
+    }
 
     int getChangeCounter() const;
 

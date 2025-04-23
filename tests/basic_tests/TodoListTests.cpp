@@ -32,6 +32,13 @@ TEST(TodoListTest, DeleteActivity) {
     EXPECT_EQ(todoList.getSize(), sizeBefore);
 }
 
+//test per il nome
+TEST(TodoListTest, SetAndGetName) {
+    TodoList list;
+    list.setName("Studio");
+    EXPECT_EQ(list.getName(), "Studio");
+}
+
 // Test per il cambio di stato dell'attività
 TEST(TodoListTest, ChangeActivityStatus) {
     TodoList todoList;
@@ -49,12 +56,12 @@ TEST(TodoListTest, ChangeActivityStatus) {
 TEST(TodoListTest, ChangeActivityDescription) {
     TodoList todoList;
     todoList.addActivity(Activity("Activity 1", Priority::Low));
-    todoList.modifyActivity(0, "Updated Description");
+    todoList.modifyActivity(0, std::string("Updated Description"));
     EXPECT_EQ(todoList.getActivityAt(0).getDescription(), "Updated Description");
 
     // Indice non valido, la descrizione non deve cambiare
     std::string descriptionBefore = todoList.getActivityAt(0).getDescription();
-    todoList.modifyActivity(10, "Another Description");
+    todoList.modifyActivity(10, std::string("Another Description"));
     EXPECT_EQ(todoList.getActivityAt(0).getDescription(), descriptionBefore);
 }
 
@@ -192,6 +199,6 @@ TEST(TodoListTest, AutoSaveTriggered) {
     EXPECT_EQ(list.getChangeCounter(), 0);
 
     // Verifica che il file sia stato scritto
-    std::ifstream file("todo_list.json");
+    std::ifstream file(list.getName()+".json");
     EXPECT_TRUE(file.good());  // Controlla se il file esiste
 }

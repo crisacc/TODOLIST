@@ -134,13 +134,20 @@ void printAll(const TodoList& todo) {
 
 
 int main() {
+
     TodoList todoList;
 
-    // Carica i dati salvati, se esistono
-    if (todoList.readFromFile("todolist.json")) {
-        cout << "Dati caricati con successo dal file todolist.json." << endl;
+    cout << "Inserisci il nome della lista da aprire o creare: ";
+    string nomeLista;
+    getline(cin, nomeLista);
+
+    todoList.setName(nomeLista);
+    string filename = nomeLista + ".json";
+
+    if (todoList.readFromFile(filename)) {
+        cout << "Dati caricati con successo dal file \"" << filename << "\"." << endl;
     } else {
-        cout << "Nessun file di salvataggio trovato o errore nel caricamento. Verrà creato un nuovo file al salvataggio." << endl;
+        cout << "Nessun file di salvataggio trovato o errore nel caricamento. Verrà creato un nuovo file \"" << filename << "\" al salvataggio." << endl;
     }
 
     int choice;
@@ -224,7 +231,7 @@ int main() {
             }
             case 0: { // Uscita: salvataggio finale
                 cout << "Salvataggio finale in corso..." << endl;
-                if (todoList.writeToFile("todolist.json")) {
+                if (todoList.writeToFile(todoList.getName()+".json")) {
                     cout << "File salvato con successo." << endl;
                 } else {
                     cout << "Errore nel salvataggio finale." << endl;
